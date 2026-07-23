@@ -10,7 +10,9 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default function GonderilerPage() {
-  const seriPosts = getPostsByCategory().filter((p) => p.seriesLabel);
+  const seriPosts = getPostsByCategory()
+    .filter((p) => p.seriesLabel)
+    .sort((a, b) => (a.date < b.date ? -1 : 1));
 
   return (
     <Section>
