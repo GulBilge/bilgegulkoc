@@ -13,5 +13,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.date),
   }));
 
-  return [...staticPages, ...postPages];
+  const claudeSeriesPages = [
+    "/21gunClaude",
+    "/21gunClaude/gonderiler",
+    "/21gunClaude/promptlar",
+    "/21gunClaude/hikayeler",
+  ].map((path) => ({
+    url: `${siteConfig.url}${path}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticPages, ...postPages, ...claudeSeriesPages];
 }
