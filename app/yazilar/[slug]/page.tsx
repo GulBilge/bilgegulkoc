@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section } from "@/components/ui/Section";
+import { InstagramEmbed } from "@/components/InstagramEmbed";
 import { pageMetadata } from "@/lib/metadata";
 import { categories, getPostBySlug, posts } from "@/lib/yazilar";
 
@@ -71,18 +72,10 @@ export default async function YaziDetayPage({
           ))}
         </div>
 
-        <p className="text-sm text-stone-500">
-          Bu yazı önce{" "}
-          <a
-            href={post.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-stone-900 underline underline-offset-2"
-          >
-            Instagram&apos;da
-          </a>{" "}
-          paylaşıldı.
-        </p>
+        <div className="flex flex-col gap-3">
+          <p className="text-sm text-stone-500">Bu yazı önce Instagram&apos;da paylaşıldı:</p>
+          <InstagramEmbed url={post.instagramUrl} />
+        </div>
       </article>
     </Section>
   );
