@@ -15,10 +15,29 @@ export default function HakkimdaPage() {
           Hakkımda
         </h1>
         <p className="max-w-xl text-base leading-relaxed text-stone-600">
-          [Kurumsaldan çıkış hikayesi buraya gelecek]
+          Yıllarca kurumsal hayatın içinde yazılım mühendisi olarak
+          çalıştım. Büyük sistemler kurdum, karmaşık problemleri çözdüm —
+          ama bir noktada fark ettim ki kurduğum bu sistemler kendi
+          hayatıma hiç yer bırakmıyordu.
         </p>
         <p className="max-w-xl text-base leading-relaxed text-stone-600">
-          [Yazılımcı-anne yolculuğu buraya gelecek]
+          Annelik hayatıma girdiğinde, &quot;ya kariyer ya çocuk&quot;
+          seçimiyle karşı karşıya kalmak istemedim. Kurumsaldan çıkıp
+          evden, kendi kurallarımla sürdürülebilir bir profesyonel pratik
+          kurmaya karar verdim.
+        </p>
+        <p className="max-w-xl text-base leading-relaxed text-stone-600">
+          Bugün yazılım mühendisliği ve yapay zeka mimarlığı bilgimi,
+          benim gibi evden çalışan, işini büyütmek isteyen ama sistemi
+          olmayan uzman kadınlara taşıyorum. Koçlar, danışmanlar,
+          eğitmenler, terapistler — kaplarına sığamayan ama görünürlük ve
+          mahremiyet kaygısı da taşıyan kadınlar.
+        </p>
+        <p className="max-w-xl text-base leading-relaxed text-stone-600">
+          Bunu dışarıdan bir uzman gibi değil, aynı gerçekliği yaşayan
+          biri olarak yapıyorum. Sabahın erken saatleri, bölünmüş dikkat,
+          &quot;yetebilir miyim&quot; sorusu — hepsini biliyorum. Bu yüzden
+          kurduğum sistemler teoride değil, gerçek hayatta işliyor.
         </p>
       </div>
     </Section>

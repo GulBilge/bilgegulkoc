@@ -6,6 +6,7 @@ export const siteConfig = {
     "Yazılım mühendisi ve AI mimarı Bilge Gül Koç ile tanışın — ev bazlı çalışan uzman kadınlar (koç, danışman, eğitmen, terapist) için Claude ve yapay zeka sistemleri kuruyor.",
   url: "https://bilgegulkoc.netlify.app",
   bio: "İşini büyütürken kendine de yer aç ☘️ Uzman kadınlar için Yapay Zeka Çözümleri — yazılımcı anne olarak içeriden anlatıyorum",
+  instagram: "https://www.instagram.com/teknikbilgekoc/",
   keywords: [
     "kadın girişimci AI",
     "yapay zeka koçlar için",

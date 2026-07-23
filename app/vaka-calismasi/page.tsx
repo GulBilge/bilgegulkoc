@@ -15,7 +15,8 @@ export default function VakaCalismasiPage() {
           Vaka Çalışması
         </h1>
         <p className="max-w-xl text-base leading-relaxed text-stone-600">
-          Yakında burada olacak.
+          Şu anda bir müşteri projesi üzerinde çalışıyorum. Tamamlandığında,
+          süreci ve sonuçları burada detaylıca paylaşacağım.
         </p>
       </div>
     </Section>

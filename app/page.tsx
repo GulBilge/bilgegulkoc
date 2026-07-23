@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/Section";
 import { Hero } from "@/components/sections/Hero";
 import { ProofPoints } from "@/components/sections/ProofPoints";
 import { CTA } from "@/components/sections/CTA";
+import { siteConfig } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -14,9 +15,9 @@ export default function HomePage() {
       </Section>
       <Section className="border-t border-stone-200">
         <CTA
-          title="[CTA metni buraya gelecek]"
-          href="/ne-yapiyorum"
-          label="Ne Yapıyorum"
+          title="Bir sonraki adımı birlikte atalım."
+          href={siteConfig.instagram}
+          label="Instagram'da DM'e CLAUDE yaz"
         />
       </Section>
     </>
