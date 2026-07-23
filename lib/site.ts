@@ -22,9 +22,7 @@ export const primaryNav = [
   { label: "Hakkımda", href: "/hakkimda" },
   { label: "Ne Yapıyorum", href: "/ne-yapiyorum" },
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
+  { label: "Yazılar", href: "/yazilar" },
 ];
 
-export const upcomingNav = [
-  { label: "Yazılar" },
-  { label: "Kaynaklar" },
-];
+export const upcomingNav = [{ label: "Kaynaklar" }];
