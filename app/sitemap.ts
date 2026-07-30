@@ -23,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticPages, ...postPages, ...claudeSeriesPages];
+  const standalonePages = [
+    {
+      url: `${siteConfig.url}/rehber`,
+      lastModified: new Date(),
+    },
+  ];
+
+  return [...staticPages, ...postPages, ...claudeSeriesPages, ...standalonePages];
 }
