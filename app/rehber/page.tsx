@@ -166,20 +166,20 @@ export default function RehberPage() {
               seçeneği işaretleyip ilerle, sonradan değişir
             </li>
           </ul>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-3">
             <GuideImage
               src="/images/rehber/kanal-secimi.jpg"
-              alt="Kanal seçim ekranı"
+              alt="'Where would you like to start?' kanal seçim ekranı"
+            />
+            <GuideImage
+              src="/images/rehber/izin-secimi.jpg"
+              alt="'Select the business assets to share with Manychat' izin ekranı"
             />
             <GuideImage
               src="/images/rehber/instagram-baglanti.jpg"
-              alt="Instagram bağlantı ekranı"
+              alt="'Review what you'll share with Manychat' onay ekranı"
             />
           </div>
-          <GuideImage
-            src="/images/rehber/baglanti-basarili.jpg"
-            alt="Bağlantı başarılı ekranı"
-          />
         </section>
 
         {/* Bölüm 3 */}
