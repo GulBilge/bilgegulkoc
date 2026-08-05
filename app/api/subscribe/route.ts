@@ -2,6 +2,32 @@ import { NextRequest, NextResponse } from "next/server";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Apps Script'in /exec adresi genelde script.googleusercontent.com'a 302 ile
+// yönlendirir. fetch'in varsayılan "follow" davranışı bu yönlendirmede POST'u
+// GET'e çevirip 405 aldırıyor, o yüzden yönlendirmeyi elle POST olarak takip
+// ediyoruz.
+async function postWithRedirect(
+  url: string,
+  init: RequestInit,
+  maxRedirects = 3
+): Promise<Response> {
+  let response = await fetch(url, { ...init, redirect: "manual" });
+
+  let redirectCount = 0;
+  while (
+    response.status >= 300 &&
+    response.status < 400 &&
+    redirectCount < maxRedirects
+  ) {
+    const location = response.headers.get("location");
+    if (!location) break;
+    response = await fetch(location, { ...init, redirect: "manual" });
+    redirectCount += 1;
+  }
+
+  return response;
+}
+
 export async function POST(request: NextRequest) {
   let email: string | undefined;
 
@@ -30,7 +56,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(webhookUrl, {
+    const response = await postWithRedirect(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
