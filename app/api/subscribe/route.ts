@@ -1,31 +1,56 @@
 import { NextRequest, NextResponse } from "next/server";
+import https from "node:https";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Apps Script'in /exec adresi genelde script.googleusercontent.com'a 302 ile
-// yönlendirir. fetch'in varsayılan "follow" davranışı bu yönlendirmede POST'u
-// GET'e çevirip 405 aldırıyor, o yüzden yönlendirmeyi elle POST olarak takip
+// yönlendirir. fetch'in redirect: "manual" modu Node'da opak (durum kodu 0,
+// header'sız) bir cevap döndürdüğü için yönlendirmeyi takip edemiyor; bu
+// yüzden düşük seviye https modülüyle POST + body'yi koruyarak elle takip
 // ediyoruz.
-async function postWithRedirect(
-  url: string,
-  init: RequestInit,
-  maxRedirects = 3
-): Promise<Response> {
-  let response = await fetch(url, { ...init, redirect: "manual" });
+function postJson(
+  targetUrl: string,
+  payload: string,
+  redirectsLeft = 3
+): Promise<{ status: number; body: string }> {
+  return new Promise((resolve, reject) => {
+    const attempt = (currentUrl: string, remaining: number) => {
+      const parsed = new URL(currentUrl);
+      const req = https.request(
+        {
+          hostname: parsed.hostname,
+          path: `${parsed.pathname}${parsed.search}`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Content-Length": Buffer.byteLength(payload),
+          },
+        },
+        (res) => {
+          const status = res.statusCode ?? 0;
+          const location = res.headers.location;
 
-  let redirectCount = 0;
-  while (
-    response.status >= 300 &&
-    response.status < 400 &&
-    redirectCount < maxRedirects
-  ) {
-    const location = response.headers.get("location");
-    if (!location) break;
-    response = await fetch(location, { ...init, redirect: "manual" });
-    redirectCount += 1;
-  }
+          if (status >= 300 && status < 400 && location && remaining > 0) {
+            res.resume();
+            attempt(new URL(location, currentUrl).toString(), remaining - 1);
+            return;
+          }
 
-  return response;
+          let body = "";
+          res.on("data", (chunk) => {
+            body += chunk;
+          });
+          res.on("end", () => resolve({ status, body }));
+        }
+      );
+
+      req.on("error", reject);
+      req.write(payload);
+      req.end();
+    };
+
+    attempt(targetUrl, redirectsLeft);
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -56,17 +81,17 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const response = await postWithRedirect(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        date: new Date().toISOString(),
-      }),
+    const payload = JSON.stringify({
+      email,
+      date: new Date().toISOString(),
     });
 
-    if (!response.ok) {
-      throw new Error(`Sheets webhook ${response.status} döndürdü`);
+    const result = await postJson(webhookUrl, payload);
+
+    if (result.status < 200 || result.status >= 300) {
+      throw new Error(
+        `Sheets webhook ${result.status} döndürdü: ${result.body.slice(0, 300)}`
+      );
     }
   } catch (error) {
     console.error("E-posta Sheets'e kaydedilemedi:", error);
