@@ -40,6 +40,7 @@ function postJson(
           res.on("data", (chunk) => {
             body += chunk;
           });
+          console.log("body",body);
           res.on("end", () => resolve({ status, body }));
         }
       );
@@ -85,7 +86,7 @@ export async function POST(request: NextRequest) {
       email,
       date: new Date().toISOString(),
     });
-
+console.log("payload",payload);
     const result = await postJson(webhookUrl, payload);
 
     if (result.status < 200 || result.status >= 300) {
