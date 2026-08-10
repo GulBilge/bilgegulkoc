@@ -34,15 +34,18 @@ export function EmailPopup() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/subscribe", {
+      const formData = new URLSearchParams();
+      formData.append("form-name", "abone");
+      formData.append("email", email);
+
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString(),
       });
-      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.error ?? "Bir şeyler ters gitti.");
+        throw new Error("Bir şeyler ters gitti.");
       }
 
       setStatus("success");
