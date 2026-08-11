@@ -5,13 +5,13 @@ import { pageMetadata } from "@/lib/metadata";
 import { getPostsByCategory } from "@/lib/yazilar";
 
 export const metadata: Metadata = pageMetadata(
-  "Gönderiler — 21 Gün 21 Claude Özelliği",
-  "21 günlük serinin tüm Instagram gönderi metinleri."
+  "Gönderiler — Claude Cowork'e Giriş Serisi",
+  "Claude Cowork serisinin tüm Instagram gönderi metinleri."
 );
 
-export default function GonderilerPage() {
+export default function CoworkGonderilerPage() {
   const seriPosts = getPostsByCategory()
-    .filter((p) => p.series === "claude-21")
+    .filter((p) => p.series === "cowork-giris")
     .sort((a, b) => (a.date < b.date ? -1 : 1));
 
   return (
@@ -19,16 +19,16 @@ export default function GonderilerPage() {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-3">
           <Link
-            href="/21gunClaude"
+            href="/cowork"
             className="text-sm font-medium text-stone-500 hover:text-stone-900"
           >
-            ← 21 Gün 21 Claude Özelliği
+            ← Claude Cowork&apos;e Giriş Serisi
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight text-stone-950">
             Gönderiler
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-stone-600">
-            21 günün her birinde paylaştığım gönderi. Devamını okumak
+            Serinin her gününde paylaştığım gönderi. Devamını okumak
             istersen Yazılar&apos;daki tam haline gidebilirsin.
           </p>
         </div>

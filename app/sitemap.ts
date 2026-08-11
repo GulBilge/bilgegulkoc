@@ -23,6 +23,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  const coworkSeriesPages = [
+    "/cowork",
+    "/cowork/gonderiler",
+    "/cowork/promptlar",
+    "/cowork/karusel-promptu",
+  ].map((path) => ({
+    url: `${siteConfig.url}${path}`,
+    lastModified: new Date(),
+  }));
+
   const standalonePages = [
     {
       url: `${siteConfig.url}/rehber`,
@@ -30,5 +40,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticPages, ...postPages, ...claudeSeriesPages, ...standalonePages];
+  return [
+    ...staticPages,
+    ...postPages,
+    ...claudeSeriesPages,
+    ...coworkSeriesPages,
+    ...standalonePages,
+  ];
 }
