@@ -6,7 +6,7 @@ const SUBSCRIBED_KEY = "bilgegulkoc_subscribed";
 const DISMISSED_KEY = "bilgegulkoc_popup_dismissed";
 const SHOW_DELAY_MS = 4000;
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "already" | "error";
 
 export function EmailPopup() {
   const [visible, setVisible] = useState(false);
@@ -34,22 +34,39 @@ export function EmailPopup() {
     setErrorMessage("");
 
     try {
-      const formData = new URLSearchParams();
-      formData.append("form-name", "abone");
-      formData.append("email", email);
-
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData.toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error("Bir şeyler ters gitti.");
+      let alreadySubscribed = false;
+      try {
+        const checkResponse = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        if (checkResponse.ok) {
+          const data = await checkResponse.json();
+          alreadySubscribed = Boolean(data.alreadySubscribed);
+        }
+      } catch {
+        // Sunucu tarafı kontrol başarısız olursa yine de kaydı engelleme.
       }
 
-      setStatus("success");
+      if (!alreadySubscribed) {
+        const formData = new URLSearchParams();
+        formData.append("form-name", "abone");
+        formData.append("email", email);
+
+        const response = await fetch("/__forms.html", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData.toString(),
+        });
+
+        if (!response.ok) {
+          throw new Error("Bir şeyler ters gitti.");
+        }
+      }
+
       localStorage.setItem(SUBSCRIBED_KEY, "true");
+      setStatus(alreadySubscribed ? "already" : "success");
       setTimeout(() => setVisible(false), 2000);
     } catch (error) {
       setStatus("error");
@@ -77,13 +94,15 @@ export function EmailPopup() {
           ✕
         </button>
 
-        {status === "success" ? (
+        {status === "success" || status === "already" ? (
           <div className="flex flex-col gap-2 py-4 text-center">
             <p className="text-lg font-semibold text-stone-950">
-              Teşekkürler!
+              {status === "already" ? "Zaten abonesin!" : "Teşekkürler!"}
             </p>
             <p className="text-sm text-stone-600">
-              Kaydoldun, seni haberdar edeceğim.
+              {status === "already"
+                ? "Bu e-posta zaten kayıtlı, tekrar eklemedik."
+                : "Kaydoldun, seni haberdar edeceğim."}
             </p>
           </div>
         ) : (
