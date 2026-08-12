@@ -23,15 +23,15 @@ export default function CoworkPromptlarPage() {
             Promptlar
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-stone-600">
-            Serinin promptları burada toplanacak. Şimdilik hazır olan tek
-            prompt aşağıda — diğerleri eklendikçe bu sayfa güncellenecek.
+            Serinin promptları burada toplanıyor — diğerleri eklendikçe bu
+            sayfa güncellenecek.
           </p>
         </div>
 
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-stone-500">
-              Gün 10/10
+              Gün 10/11
             </span>
             <h2 className="text-lg font-semibold text-stone-950">
               IG Carousel Sistem Promptu
@@ -49,6 +49,9 @@ export default function CoworkPromptlarPage() {
           </div>
 
           <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Gün 11/11
+            </span>
             <h2 className="text-lg font-semibold text-stone-950">
               Bültenimi Tara Promptu
             </h2>
