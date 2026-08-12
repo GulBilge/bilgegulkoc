@@ -78,3 +78,140 @@ TESLİM ÖNCESİ KONTROL LİSTESİ
 [ ] Dosya /output klasörüne doğru isimle kaydedildi mi?
 [ ] CTA slaydında save/send çağrısı var mı, sadece "takip et" mi kaldı?
 [ ] HOOK slaydı gerçekten swipe'a zorluyor mu (iddia/veri/soru)?`;
+
+export const newsletterIntelligencePrompt = `GÖREV: Newsletter Intelligence — bültenlerimi istihbarata dönüştür
+
+BEN KİMİM
+[KİM OLDUĞUN]. [KİTLEN] için içerik üretiyorum.
+İlgi alanlarım: [İLGİ ALANLARIN].
+İçerik ürettiğim yerler: [PLATFORMLAR].
+
+---
+
+ADIM 1 — BÜLTENLERİ BUL
+
+Gmail'de önce şunu ara:
+
+is:unread (newsletter OR bülten OR "weekly digest" OR "product update"
+OR "dev news") newer_than:[DÖNEM] -in:spam
+
+ÖNEMLİ: Bu sorgu neredeyse her zaman az sonuç verir. 10'dan az sonuç
+gelirse mutlaka geniş sorguyla tekrar ara:
+
+newer_than:[DÖNEM] -in:spam -in:sent -in:draft (category:promotions OR
+category:updates OR unsubscribe OR newsletter OR bülten OR digest)
+
+Neden: Bültenlerin çoğu okunmuş olabilir, Promotions sekmesine düşmüş
+olabilir veya konu satırında "newsletter" geçmeyebilir. "unsubscribe"
+kelimesi en güvenilir bülten işaretidir.
+
+Maksimum 50 mail al. Değeri yüksek olanların tam metnini çek
+(PLAIN_TEXT formatında, HTML değil). Alakasız olanlarda snippet yeter.
+
+---
+
+ADIM 2 — HER BÜLTENİ ANALİZ ET
+
+Her biri için şunları çıkar:
+
+- Gönderen ve konu
+- 2 cümle özet
+- Kategori (benim ilgi alanlarıma göre grupla)
+- Önem puanı 1-10 (ilgi alanlarıma yakınsa yüksek ver)
+- Aksiyon: hemen oku / sonra oku / etkinlik / araç güncellemesi / arşivle
+- Varsa tarih/deadline
+- Bu bültenden çıkacak 1 içerik fikri
+
+KRİTİK: Somut rakamları mutlaka çıkar — fiyatlar, yüzdeler, tarihler,
+sürüm numaraları. "Fiyatlar düştü" zayıf; "%80 indi, 0,20 $ oldu" güçlü.
+Raporun tüm değeri buradan gelir.
+
+---
+
+ADIM 3 — ÖRÜNTÜ ARA
+
+1. Hangi konu 2+ bültende geçiyor? Kaç bültende geçtiğini SAY ve tablo yap.
+   Sayı, iddianın kanıtıdır.
+2. Fiyat değişimi var mı? Rakamları yan yana koy.
+3. Yaklaşan etkinlik veya deadline var mı? Geçmiş olanları ❌,
+   yaklaşanları ⏰ ile işaretle.
+4. EN ÖNEMLİSİ: Örüntüler arasında bağlantı kur. İki ayrı haberi
+   birleştirip "bu ikisi neden aynı anda oldu" sorusunu cevapla.
+   Ayrı ayrı listelemek haber; bağlantı kurmak analizdir.
+5. Bonus: Abonelik/ödeme maili görürsen (iptal, yenileme, deneme bitişi)
+   ayrı bir bölümde uyar.
+
+---
+
+ADIM 4 — ÜÇ DOSYA ÜRET
+
+Klasör yoksa oluştur. Dosya adlarında tarih YYYY-AA-GG formatında olsun.
+
+📄 1. reports/newsletter_intel_[TARİH].md — ham analiz
+
+   # Newsletter Intelligence - [Tarih]
+   ## Bu Hafta Okuman Gereken 5 Bülten  (tablo: Gönderen|Konu|Önem|Aksiyon)
+   ## Detaylı Analiz                     (her bülten: özet + rakamlar)
+   ## Trend Radarı                       (kaç bültende geçtiği sayılarak)
+   ## Takvime Eklenecekler
+   ## Abonelik Uyarıları                 (varsa)
+   ## Arşiv Önerileri                    (+ unsubscribe linkleri, SADECE liste)
+   ## Genel Değerlendirme
+
+📄 2. reports/kisisel_bulten_[TARİH].md — okunacak bülten
+
+   Bu bir rapor değil, gerçek bir bülten olsun. Fark şu:
+   rapor "hangi maili açmalısın" der, bülten "o mailde ne yazıyordu" der.
+
+   Yapı:
+   - Başlık + sayı numarası + tarih
+   - "Bu sayıda" içindekiler
+   - 4-5 tematik bölüm (kaynak ve tarih belirterek, içeriği ANLATARAK)
+   - Son bölüm: "Bunlar benim için ne anlama geliyor" — kitleme çevirisi,
+     3 somut örnek
+   - Kaynak tablosu
+
+📄 3. content_ideas/icerik_fikirleri_[TARİH].txt
+
+   3 ana + 2 yedek kısa video hook'u. Her biri için:
+   - Hook cümlesi (ilk 3 saniyede gerilim kuracak)
+   - İlk 15 saniyenin devamı
+   - Neden işe yaradığı
+   - Görsel önerisi
+
+   Artı 2 tam sosyal medya postu (170-220 kelime, sonunda soru).
+
+   İyi hook formülleri:
+   • somut rakam + merak boşluğu → "%94 ucuzladı, kimse konuşmuyor"
+   • kişisel itiraf + kayıp        → "kaçırdım"
+   • doğrudan hitap                → "sen hâlâ..."
+
+---
+
+KURALLAR
+
+ASLA:
+- Mail silme, arşivleme, okundu işaretleme, unsubscribe yapma.
+  Unsubscribe linklerini sadece LİSTE olarak ver.
+- Rakam uydurma. Bültende yoksa yazma.
+- Şirket iddiasını doğrulanmış gerçek gibi sunma.
+  "Kendi ölçümleri, bağımsız doğrulama yok" notunu ekle.
+
+HER ZAMAN:
+- Kaynak ve tarih göster.
+- Şüpheli mailleri işaretle: "3 saatte bitiyor" tipi aciliyet baskısı,
+  "para kazan" teklifleri, tanınmayan gönderenler.
+- Hangi Gmail hesabının tarandığını raporun başında belirt.
+- Rapor dili Türkçe olsun, tool ve model isimleri orijinal kalsın.
+- İngilizce terimleri ilk geçtiğinde parantez içinde Türkçe karşılığıyla ver.
+
+SON ADIM — DOĞRULAMA
+Teslimden önce kontrol et:
+□ Her sayısal iddianın kaynağı bir bültende geçiyor mu?
+□ Şirket iddiaları temkinli notla verilmiş mi?
+□ Geçmiş deadline'lar işaretlenmiş mi?
+□ Hiçbir maile dokunulmadı mı?
+
+Sonunda sohbette de kısa bir özet ver.
+
+Şimdi başla.`;

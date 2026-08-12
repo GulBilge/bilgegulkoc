@@ -24,6 +24,7 @@ export const primaryNav = [
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
   { label: "Yazılar", href: "/yazilar" },
   { label: "21 Gün Claude", href: "/21gunClaude" },
+  { label: "Cowork Serisi", href: "/cowork" },
 ];
 
 export const upcomingNav = [{ label: "Kaynaklar" }];

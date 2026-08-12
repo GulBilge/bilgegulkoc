@@ -15,6 +15,7 @@ export type Post = {
   excerpt: string;
   category: string;
   date: string;
+  series?: string;
   seriesLabel?: string;
   body: string[];
   instagramUrl: string;
@@ -28,6 +29,7 @@ export const posts: Post[] = [
       "Claude ile ChatGPT arasındaki en önemli fark: biri unutur, diğeri seninle birlikte çalışır.",
     category: "ai-otomasyon",
     date: "2026-06-29",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 1/21",
     body: [
       "ChatGPT'yi herkes biliyor. Claude'u çok az kişi tanıyor. İkisi de yapay zeka ama çalışma şekilleri tamamen farklı.",
@@ -43,6 +45,7 @@ export const posts: Post[] = [
     excerpt: "Claude'a dosya yükleyip saatler süren okuma işini dakikalara indirmek.",
     category: "ai-otomasyon",
     date: "2026-06-30",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 2/21",
     body: [
       "20 sayfalık raporu okumak zorunda değilsin. Claude okusun.",
@@ -58,6 +61,7 @@ export const posts: Post[] = [
     excerpt: "Claude için kod bilmene gerek yok — sadece Türkçe yazman yeterli.",
     category: "ai-otomasyon",
     date: "2026-07-01",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 3/21",
     body: [
       "Yapay zeka duyunca aklına ne geliyor? Kod. Terminal. Siyah ekran. Anlaşılmaz komutlar. Dur bir saniye.",
@@ -74,6 +78,7 @@ export const posts: Post[] = [
     excerpt: "Claude Projects ile kim olduğunu bir kez anlatıyorsun, Claude her seferinde hatırlıyor.",
     category: "ai-otomasyon",
     date: "2026-07-02",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 4/21",
     body: [
       "Claude kullanıyorsun ama her seferinde sıfırdan başlıyorsun. \"Ben koçum, hedef kitlem şu, ses tonum böyle…\" Bunu her konuşmada tekrar yazmak zorunda değilsin.",
@@ -87,6 +92,7 @@ export const posts: Post[] = [
     excerpt: "Projects hafızası kalıcı, sohbet hafızası geçici — ikisini doğru yerde kullanmak zaman kazandırıyor.",
     category: "ai-otomasyon",
     date: "2026-07-03",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 5/21",
     body: [
       "Claude'u her açtığında sıfırdan başlıyorsan hafızayı kapatmışsın demektir.",
@@ -102,6 +108,7 @@ export const posts: Post[] = [
     excerpt: "Skills ile Claude'a bir kez öğretiyorsun, defalarca kullanıyorsun.",
     category: "ai-otomasyon",
     date: "2026-07-04",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 6/21",
     body: [
       "Claude'a her seferinde aynı talimatları tekrar yazıyorsan saatlerini çöpe atıyorsun.",
@@ -116,6 +123,7 @@ export const posts: Post[] = [
     excerpt: "Claude ile yazdığın karşılama metnini otomasyona bağlayınca, sen uyurken danışan adayları karşılanıyor.",
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-07-05",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 7/21",
     body: [
       "Her gün aynı soruları alıyorsun. \"Seanslar nasıl işliyor?\" \"Paketler neler?\" \"Nereden başlayayım?\" Ve her birine tek tek, yeniden, elle cevap yazıyorsun.",
@@ -131,6 +139,7 @@ export const posts: Post[] = [
     excerpt: "Artifacts ile Claude sana metin değil, doğrudan kullanılabilir belge üretiyor.",
     category: "ai-otomasyon",
     date: "2026-07-06",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 8/21",
     body: [
       "Claude'dan metin alıp Word'e yapıştırıyorsun. Bu adımı atlayabilirsin.",
@@ -145,6 +154,7 @@ export const posts: Post[] = [
     excerpt: "Web Search açıkken Claude güncel bilgiye erişiyor ve kaynak gösteriyor.",
     category: "ai-otomasyon",
     date: "2026-07-07",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 9/21",
     body: [
       "Claude internete bağlanabiliyor. Ve büyük ihtimalle sen bunu aktif etmedin.",
@@ -160,6 +170,7 @@ export const posts: Post[] = [
     excerpt: "Tek bir fikri Claude ile 10 dakikada 5 farklı içerik formatına dönüştürmek.",
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-07-08",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 10/21",
     body: [
       "\"Bugün ne paylaşsam\" diye düşünmek, içerik üretmenin en büyük zaman kaybı.",
@@ -174,6 +185,7 @@ export const posts: Post[] = [
     excerpt: "İyi bir prompt dört şeyi içerir: kim olduğun, ne istediğin, nasıl istediğin, ne için kullanacağın.",
     category: "ai-otomasyon",
     date: "2026-07-09",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 11/21",
     body: [
       "Kimse söylemiyor ama uzman kadınların Claude sorunu yapay zeka değil, eksik talimat. Claude'dan beklediğin cevabı alamıyorsun.",
@@ -190,6 +202,7 @@ export const posts: Post[] = [
     excerpt: "Claude, Google Drive'ına doğrudan bağlanıp dosyalarını okuyabiliyor.",
     category: "ai-otomasyon",
     date: "2026-07-10",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 12/21",
     body: [
       "Drive'dan dosya alıp Claude'a yapıştırmak artık gerekmiyor.",
@@ -204,6 +217,7 @@ export const posts: Post[] = [
     excerpt: "Aklına geleni Claude'a söylüyorsun; o organize ediyor, önceliklendiriyor, üzerine inşa ediyor.",
     category: "ai-otomasyon",
     date: "2026-07-11",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 13/21",
     body: [
       "Beynin doluysa her şey dağılıyor. Danışan seansı hazırlığı, içerik fikirleri, yapılacaklar listesi, o an aklına gelen şey — hepsini taşımak zorunda değilsin.",
@@ -219,6 +233,7 @@ export const posts: Post[] = [
     excerpt: "SSS'lerini Claude ile bir kez yaz, sistemin senin yerine cevaplasın.",
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-07-12",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 14/21",
     body: [
       "Aynı soruyu kaçıncı kez cevaplıyorsun? \"Seanslar nasıl işliyor?\" \"Fiyatlar neler?\" \"Nereden başlayayım?\"",
@@ -232,6 +247,7 @@ export const posts: Post[] = [
     excerpt: "Claude'a birkaç örnek metnini verip kendi ses tonunu öğretmek.",
     category: "ai-otomasyon",
     date: "2026-07-13",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 15/21",
     body: [
       "Claude'dan gelen metinler \"yapay zeka gibi\" hissettiriyorsa ses kopyası henüz yok demektir.",
@@ -247,6 +263,7 @@ export const posts: Post[] = [
     excerpt: "Extended Thinking ile Claude, önemli kararlarda adım adım düşünüyor.",
     category: "ai-otomasyon",
     date: "2026-07-14",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 16/21",
     body: [
       "Claude hızlı cevap veriyorsa yüzeysel cevap veriyor demektir. Bazı sorular hız değil, derinlik istiyor.",
@@ -260,6 +277,7 @@ export const posts: Post[] = [
     excerpt: "Kafandaki karışıklığı olduğu gibi Claude'a dök; o organize etsin, sen netleş.",
     category: "ai-otomasyon",
     date: "2026-07-15",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 17/21",
     body: [
       "Kafan karışıkken en zor şey düşüncelerini netleştirmek. Ve çoğu zaman yalnız yapıyorsun bunu.",
@@ -275,6 +293,7 @@ export const posts: Post[] = [
     excerpt: "14 açık sekme yerine: Deep Research konuyu kendi başına araştırıp kaynaklı bir rapor veriyor.",
     category: "ai-otomasyon",
     date: "2026-07-16",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 18/21",
     body: [
       "Bir konuyu araştırmak için 40 dakika ayırdım. Sonunda 14 sekme açık, yarısı okunmamış, notlarım dağınık, elimde ne olduğunu ben bile bilmiyordum. Kızım \"anne bitti mi\" diye üçüncü kez sordu. Bitmemişti.",
@@ -291,6 +310,7 @@ export const posts: Post[] = [
     excerpt: "Rol ver, format belirt, sınır koy — Claude'dan aldığın çıktıyı değiştiren 3 basit kural.",
     category: "ai-otomasyon",
     date: "2026-07-17",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 19/21",
     body: [
       "21 günde Claude'u öğrenirken en çok bunu gördüm: iyi sonuç alanlar daha zeki değil — daha net soru soruyor.",
@@ -308,6 +328,7 @@ export const posts: Post[] = [
     excerpt: "Claude, Notion ve Google Sheets'e doğrudan bağlanıp tablolarını analiz edebiliyor.",
     category: "ai-otomasyon",
     date: "2026-07-18",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 20/21",
     body: [
       "Notion'dan kopyala, Claude'a yapıştır, Claude'dan al, Notion'a taşı. Bu döngü bitti.",
@@ -321,6 +342,7 @@ export const posts: Post[] = [
     excerpt: "21 gün boyunca öğrendiklerimizin özeti — ve bunun neden bir başlangıç olduğu.",
     category: "ai-otomasyon",
     date: "2026-07-19",
+    series: "claude-21",
     seriesLabel: "21 Gün 21 Claude Özelliği — Gün 21/21",
     body: [
       "21 gün. 21 içerik. Ve sen hâlâ buradasın. Bu küçük bir şey değil.",
@@ -364,6 +386,172 @@ export const posts: Post[] = [
       "Bunu nasıl kurduğumu yakında paylaşacağım.",
     ],
     instagramUrl: "https://www.instagram.com/reel/DbGnrTlgLLN/",
+  },
+  {
+    slug: "cowork-gun-1-chat-vs-cowork",
+    title: "Claude'u duydun. Peki Cowork?",
+    excerpt:
+      "Chat sohbet eder, Cowork iş yapar — Anthropic'in resmi kursundan ilk ders.",
+    category: "ai-otomasyon",
+    date: "2026-07-26",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 1/10",
+    body: [
+      "Claude'u duydun. Peki Cowork?",
+      "Anthropic'in resmi kursunu takip ediyorum. Kursun ilk cümlesi her şeyi özetliyor: Chat bir sohbet, Cowork bir çalışma oturumu.",
+      "Claude masaüstünü açtım. Yeni sohbette 2 mod var: Chat ve Cowork. Chat bildiğin sohbet modu — sohbet edersin, plan yaparsın, strateji kurarsın. Cowork ise iş yaptırır — dosyalarına, uygulamalarına bağlanır.",
+      "Örnekledim: Uygulamam Quizyen için Chat modunda 1 tane mail taslağı oluşturdum. Cowork modunda Gmail'imi bağladım ve verdiğim talimata göre tüm taslakları kendi oluşturdu.",
+      "Biri konuşur, diğeri yapar.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DbQqnPeoERZ/",
+  },
+  {
+    slug: "cowork-gun-2-masaustu-toplama",
+    title: "200+ dosyalı masaüstünü tek promptla topla",
+    excerpt:
+      "Cowork'e masaüstü erişimi verip tek promptla dosyaları türlerine göre klasörledim.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-07-28",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 2/10",
+    body: [
+      "Masaüstünde 200+ dosyası olan her kadın uzmanın gizli derdi olan dağınıklığı Cowork ile tek promptta nasıl topladığımı gösteriyorum.",
+      "Uzun uzun sürükle bırak yok. Claude Cowork'u açtım, masaüstüme erişim verdim, hazırladığım promptu yapıştırıp onayladım.",
+      "O da hiçbir dosyayı silmeden türlerine göre klasörledi, isimleri düzeltti. Sonuç: tertemiz masaüstü.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DbV-CEzABPp/",
+  },
+  {
+    slug: "cowork-gun-3-gmail-bes-etiket",
+    title: "1000+ maili silmeden 5 etikete ayırmak",
+    excerpt:
+      "Cowork'e Gmail'i bağlayıp tek promptla 1000'den fazla e-postayı 5 etikete ayırdım.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-07-30",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 3/10",
+    body: [
+      "Claude Cowork ile Gmail nasıl düzenlenir, 1000+ mail silmeden 5 etikete nasıl ayrılır?",
+      "Bir önceki videoda masaüstümü toplamıştım, şimdi sıra Gmail'de. Cowork > Connectors > Gmail Connect > Promptu yapıştırdım.",
+      "Cowork 6 görev oluşturdu, hepsini etiketledi. Sonuç: Bülten 222, Araç 135, sıfır silme.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DbbNUvbIwOI/",
+  },
+  {
+    slug: "cowork-gun-4-gmail-scheduled-tasks",
+    title: "Gmail'ini artık elle etiketleme",
+    excerpt:
+      "Cowork'ün Scheduled Tasks'ı ile Gmail etiketleme her ayın 1'inde kendi kendine çalışıyor.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-01",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 4/10",
+    body: [
+      "Gmail'ini her ayın 1'inde hâlâ elle etiketliyorsan, ayda 2 saatin çöpe gidiyor.",
+      "Bir önceki videoda 1000+ maili 5 etikete ayırmıştık. Bu videoda aynı işi otomatikleştirdim: Claude Cowork > Scheduled Tasks > her ayın 1'i saat 17:30'da çalışacak şekilde ayarladım. Artık gelen kutum her ay kendi kendini 5 etikete ayırıyor. Ben sadece Active / Paused tuşuna bakıyorum.",
+      "Bu ne işe yarar? Gmail otomatik etiketleme, fatura / müşteri / başvuru maillerini ayırma, her ay tekrar eden raporlama işini sıfıra indirme.",
+      "Kim için? Gmail'de kaybolan, 'mail attım' diyen müşteriyi bulamayan kadın girişimciler ve uzmanlar için.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DbgOBfkIp1k/",
+  },
+  {
+    slug: "cowork-gun-5-windsor-instagram-panosu",
+    title: "Instagram hesabını Cowork'e bağlayıp analiz panosu çıkar",
+    excerpt:
+      "Windsor.ai ile Instagram hesabını Cowork'e bağladım, son 50 gönderiden otomatik analiz panosu çıktı.",
+    category: "ai-otomasyon",
+    date: "2026-08-03",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 5/10",
+    body: [
+      "Instagram hesabını Claude Cowork'a Windsor.ai ile bağlayıp son 50 gönderinden otomatik analiz panosu nasıl çıkarılır?",
+      "Ne işe yarar? Neyin tuttuğunu, seni neyin geride tuttuğunu, şimdi denenecek 5 konuyu ve 30 günlük 3 format deneyini 2 dakikada görüyorsun.",
+      "Nasıl yapılır? Claude Cowork > Artı Butonu > Connectors > Add Connectors > Windsor.ai > Instagram Insights > Yetkilendir > Promptu yapıştır. Claude Cowork senin için interaktif analiz panosu hazırlıyor.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/Dblh6xPoOY4/",
+  },
+  {
+    slug: "cowork-gun-6-bes-gunde-ozet",
+    title: "5 günde masaüstü, mail ve analiz otomatikleşti",
+    excerpt:
+      "Claude Cowork ile 5 günde masaüstümü, mailimi ve Instagram analizimi otomatikleştirdim.",
+    category: "ai-otomasyon",
+    date: "2026-08-05",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 6/10",
+    body: [
+      "Claude Cowork ile 5 günde masaüstümü, mailimi ve analizlerimi otomatikleştirdim.",
+      "Nasıl mı? Tek prompt yazdım, gerisini o hallettı. 1000+ mail → 5 etiket. 200+ dosya → saniyeler içinde. Instagram analizim artık kendi kendine çıkıyor.",
+      "Her birinin videosu sayfamda. İsteyene DM'den atabilirim — masaüstü, Gmail ya da Instagram, hangisini istiyorsan yazabilirsin.",
+    ],
+    instagramUrl: "https://www.instagram.com/p/DbrKlYsAORy/",
+  },
+  {
+    slug: "cowork-gun-7-global-instructions",
+    title: "Cowork seni tanımıyorsa bu ayarı atlamışsındır",
+    excerpt:
+      "Global Instructions kurulmadan Cowork her sohbette seni sıfırdan öğreniyor.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-07",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 7/10",
+    body: [
+      "Akademisi olan, öğrencisi olan ya da topluluğu olan bir kadınsın ama Claude Cowork seni hâlâ tanımıyorsa, en önemli ayarı atlamışsındır.",
+      "Bu ayarı yapmadığında ne oluyor? Her sohbette kendini sıfırdan anlatıyorsun ve Cowork'ün kalıcı hafızası boş olduğu için seni unutuyor.",
+      "Çözüm nerede? Settings > Cowork > Global Instructions. Oraya bir kere kim olduğunu, kime hizmet ettiğini ve nasıl konuşması gerektiğini yazıyorsun.",
+      "Sonuç ne? Bir kere kuruyorsun, her açtığında akademini ve öğrencilerini bilen bir asistanın oluyor.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/Dbv1EoBAjn0/",
+  },
+  {
+    slug: "cowork-gun-8-scheduled-tasks-otomasyon",
+    title: "Gmail etiketlemeyi Scheduled Tasks'a bağlamak",
+    excerpt:
+      "Kod yazmadan, Cowork'ün Scheduled Tasks özelliğiyle Gmail etiketlemeyi her ay otomatik hale getirmek.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-08",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 8/10",
+    body: [
+      "Serinin bir önceki bölümünde Gmail'deki 1000 maili Cowork'e 5 ayrı etiket altında toparlatmıştım.",
+      "Şimdi bunu her ay düzenli olarak nasıl otomatik yaptıracağımı anlatıyorum. Cowork'ün Scheduled Tasks özelliğini kullanarak bazı işlerini hiç kod yazmadan otomasyona bağlayabilirsin.",
+      "Ve evet, bunu öğrenmek saatlerini geri verecek.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DbxjPkBA2VR/",
+  },
+  {
+    slug: "cowork-gun-9-instagram-analiz-rehberi",
+    title: "Instagram'dan müşteri gelmiyorsa ne yapmalı",
+    excerpt:
+      "Claude ve Windsor.ai ile Instagram Insights verilerini analiz edip büyüme karnesi çıkarmak.",
+    category: "ai-otomasyon",
+    date: "2026-08-09",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 9/10",
+    body: [
+      "Instagram'dan müşteri gelmiyorsa ne yapmalıyım? Instagram hesabımı nasıl analiz edebilirim?",
+      "Bu videoda Claude AI ve Windsor.ai kullanarak Instagram Insights verilerini nasıl analiz edeceğini, Instagram büyüme karneni nasıl çıkaracağını ve hangi içeriklerin gerçekten etkileşim getirdiğini data odaklı nasıl göreceğini gösteriyorum.",
+      "Instagram müşteri çekmiyor diyenler, kişisel marka sahipleri ve girişimciler için AI ile Instagram analizi rehberi.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/Db0QsG5go3h/",
+  },
+  {
+    slug: "cowork-gun-10-karusel-promptu",
+    title: "Karusel hazırlamak artık 30 saniye",
+    excerpt:
+      "Claude Projects'e kurduğum tek talimatla Instagram karuseli 30 saniyede hazır — promptun tamamı sitede.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-10",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 10/10",
+    body: [
+      "Instagram için karusel hazırlamak eskiden benim de 1 saatimi alıyordu. Canva'da yaz, düzenle, hizala... Yorucu.",
+      "Claude Projects ile Instagram karuseli nasıl yapılır sorusunu 30 saniyede çözdüm.",
+      "Sistem basit: Bir proje açıyorsun, içine 8 slaytlık karusel yapısını, tonunu ve görsel kimliğini anlatan tek bir talimatı yapıştırıyorsun. Sonra sadece \"karusel oluştur\" diyorsun. Claude sana 1080x1350 boyutunda, kopyalanmaya hazır karusel dosyasını veriyor.",
+      "Yapay zeka ile Instagram içerik üretimi dediğim tam olarak bu: bir kere kurulan bir talimat mimarisi. Sonra konu ne olursa olsun aynı kalitede 8 slayt alıyorsun.",
+      "Bu prompt özellikle koçlar, danışmanlar ve tek başına içerik üretenler için zaman kazandıran bir AI aracı.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/Db3h2aEAt2_/",
   },
 ];
 

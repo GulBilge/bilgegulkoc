@@ -5,13 +5,13 @@ import { pageMetadata } from "@/lib/metadata";
 import { getPostsByCategory } from "@/lib/yazilar";
 
 export const metadata: Metadata = pageMetadata(
-  "21 Gün 21 Claude Özelliği",
-  "Serinin tamamı tek yerde: gönderiler, hikayeler ve promptlar."
+  "Claude Cowork'e Giriş Serisi",
+  "Instagram'da paylaştığım Claude Cowork serisinin tamamı: gönderiler ve hazır promptlar."
 );
 
-export default function ClaudeSerisiPage() {
+export default function CoworkSerisiPage() {
   const seriPosts = getPostsByCategory()
-    .filter((p) => p.series === "claude-21")
+    .filter((p) => p.series === "cowork-giris")
     .sort((a, b) => (a.date < b.date ? -1 : 1));
 
   return (
@@ -19,33 +19,28 @@ export default function ClaudeSerisiPage() {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-3">
           <h1 className="text-2xl font-semibold tracking-tight text-stone-950">
-            21 Gün 21 Claude Özelliği
+            Claude Cowork&apos;e Giriş Serisi
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-stone-600">
-            Instagram&apos;da paylaştığım 21 günlük serinin tamamı burada.
-            Her gün için gönderiyi okuyabilir, o günün hazır promptunu
-            kopyalayabilir ya da story içeriklerine göz atabilirsin.
+            Instagram&apos;da #claudecowork etiketiyle paylaştığım serinin
+            tamamı burada. Masaüstü düzenlemeden Gmail otomasyonuna, Instagram
+            analiz panosundan karusel promptuna kadar her gönderiyi okuyabilir,
+            hazır promptları kopyalayabilirsin.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/21gunClaude/gonderiler"
+            href="/cowork/gonderiler"
             className="rounded-full border border-stone-300 px-4 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-100"
           >
             Tüm gönderiler →
           </Link>
           <Link
-            href="/21gunClaude/promptlar"
+            href="/cowork/promptlar"
             className="rounded-full border border-stone-300 px-4 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-100"
           >
             Tüm promptlar →
-          </Link>
-          <Link
-            href="/21gunClaude/hikayeler"
-            className="rounded-full border border-stone-300 px-4 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-100"
-          >
-            Tüm hikayeler →
           </Link>
         </div>
 
