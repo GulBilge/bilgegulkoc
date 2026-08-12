@@ -50,7 +50,7 @@ export default function CoworkPromptlarPage() {
 
           <div className="flex flex-col gap-3">
             <h2 className="text-lg font-semibold text-stone-950">
-              Newsletter Intelligence Promptu
+              Bültenimi Tara Promptu
             </h2>
             <p className="text-sm text-stone-600">
               Gmail&apos;deki bültenleri kişisel bültene, Reel
