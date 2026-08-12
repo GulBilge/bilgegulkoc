@@ -28,23 +28,41 @@ export default function CoworkPromptlarPage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <span className="text-xs font-semibold text-stone-500">
-            Gün 10/10
-          </span>
-          <h2 className="text-lg font-semibold text-stone-950">
-            IG Carousel Sistem Promptu
-          </h2>
-          <p className="text-sm text-stone-600">
-            Instagram carousel&apos;leri için kopyala-yapıştır hazır sistem
-            promptu.
-          </p>
-          <Link
-            href="/cowork/karusel-promptu"
-            className="text-sm font-medium text-stone-900 underline underline-offset-2"
-          >
-            Promptu görüntüle ve kopyala →
-          </Link>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Gün 10/10
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              IG Carousel Sistem Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Instagram carousel&apos;leri için kopyala-yapıştır hazır sistem
+              promptu.
+            </p>
+            <Link
+              href="/cowork/karusel-promptu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <h2 className="text-lg font-semibold text-stone-950">
+              Newsletter Intelligence Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Gmail&apos;deki bültenleri kişisel bültene, Reel
+              hook&apos;larına ve LinkedIn taslaklarına dönüştüren prompt.
+            </p>
+            <Link
+              href="/cowork/newsletter-intelligence"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
         </div>
       </div>
     </Section>
