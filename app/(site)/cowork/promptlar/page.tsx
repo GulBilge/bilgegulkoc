@@ -66,6 +66,25 @@ export default function CoworkPromptlarPage() {
               Promptu görüntüle ve kopyala →
             </Link>
           </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Gün 5/11
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              Instagram Analiz Panosu Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Windsor.ai ile son 50 gönderini analiz edip interaktif bir
+              HTML pano çıkaran prompt.
+            </p>
+            <Link
+              href="/cowork/instagram-analiz-panosu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
         </div>
       </div>
     </Section>

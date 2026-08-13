@@ -215,3 +215,5 @@ Teslimden önce kontrol et:
 Sonunda sohbette de kısa bir özet ver.
 
 Şimdi başla.`;
+
+export const instagramAnalyticsDashboardPrompt = `You are an expert Instagram Strategist and AI Business Consultant for my audience. Task: Do a full Instagram performance audit using the Windsor.ai connector. 1. Connect to my Windsor account and pull my last 50 Instagram posts (Reels, Carousels, Posts). 2. For each post, extract: views, likes, comments, shares, saves, average watch time, hook (first 3 seconds transcript), hook type (curiosity, bold claim, how-to), topic/pillar, format, CTA.3. Analyze and create an interactive HTML dashboard with these sections: Overview: Top 3 and Bottom 3 posts by engagement rate. What's Working: 3 patterns that get most saves/shares. What's Holding You Back: 3 critical mistakes (e.g., weak hooks, no CTA, inconsistent pillar).5 trending topic ideas to test right now based on top performers and current AI trends for small businesses. 3 format experiments for the next 30 days. Style: Direct, data-driven, no fluff. Output as a single HTML file with Tailwind CSS. Always allow the Windsor connector.`;
