@@ -395,7 +395,7 @@ export const posts: Post[] = [
     category: "ai-otomasyon",
     date: "2026-07-26",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 1/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 1/12",
     body: [
       "Claude'u duydun. Peki Cowork?",
       "Anthropic'in resmi kursunu takip ediyorum. Kursun ilk cümlesi her şeyi özetliyor: Chat bir sohbet, Cowork bir çalışma oturumu.",
@@ -413,7 +413,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-07-28",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 2/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 2/12",
     body: [
       "Masaüstünde 200+ dosyası olan her kadın uzmanın gizli derdi olan dağınıklığı Cowork ile tek promptta nasıl topladığımı gösteriyorum.",
       "Uzun uzun sürükle bırak yok. Claude Cowork'u açtım, masaüstüme erişim verdim, hazırladığım promptu yapıştırıp onayladım.",
@@ -429,7 +429,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-07-30",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 3/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 3/12",
     body: [
       "Claude Cowork ile Gmail nasıl düzenlenir, 1000+ mail silmeden 5 etikete nasıl ayrılır?",
       "Bir önceki videoda masaüstümü toplamıştım, şimdi sıra Gmail'de. Cowork > Connectors > Gmail Connect > Promptu yapıştırdım.",
@@ -445,7 +445,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-08-01",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 4/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 4/12",
     body: [
       "Gmail'ini her ayın 1'inde hâlâ elle etiketliyorsan, ayda 2 saatin çöpe gidiyor.",
       "Bir önceki videoda 1000+ maili 5 etikete ayırmıştık. Bu videoda aynı işi otomatikleştirdim: Claude Cowork > Scheduled Tasks > her ayın 1'i saat 17:30'da çalışacak şekilde ayarladım. Artık gelen kutum her ay kendi kendini 5 etikete ayırıyor. Ben sadece Active / Paused tuşuna bakıyorum.",
@@ -462,7 +462,7 @@ export const posts: Post[] = [
     category: "ai-otomasyon",
     date: "2026-08-03",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 5/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 5/12",
     body: [
       "Instagram hesabını Claude Cowork'a Windsor.ai ile bağlayıp son 50 gönderinden otomatik analiz panosu nasıl çıkarılır?",
       "Ne işe yarar? Neyin tuttuğunu, seni neyin geride tuttuğunu, şimdi denenecek 5 konuyu ve 30 günlük 3 format deneyini 2 dakikada görüyorsun.",
@@ -478,7 +478,7 @@ export const posts: Post[] = [
     category: "ai-otomasyon",
     date: "2026-08-05",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 6/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 6/12",
     body: [
       "Claude Cowork ile 5 günde masaüstümü, mailimi ve analizlerimi otomatikleştirdim.",
       "Nasıl mı? Tek prompt yazdım, gerisini o hallettı. 1000+ mail → 5 etiket. 200+ dosya → saniyeler içinde. Instagram analizim artık kendi kendine çıkıyor.",
@@ -494,7 +494,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-08-07",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 7/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 7/12",
     body: [
       "Akademisi olan, öğrencisi olan ya da topluluğu olan bir kadınsın ama Claude Cowork seni hâlâ tanımıyorsa, en önemli ayarı atlamışsındır.",
       "Bu ayarı yapmadığında ne oluyor? Her sohbette kendini sıfırdan anlatıyorsun ve Cowork'ün kalıcı hafızası boş olduğu için seni unutuyor.",
@@ -511,7 +511,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-08-08",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 8/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 8/12",
     body: [
       "Serinin bir önceki bölümünde Gmail'deki 1000 maili Cowork'e 5 ayrı etiket altında toparlatmıştım.",
       "Şimdi bunu her ay düzenli olarak nasıl otomatik yaptıracağımı anlatıyorum. Cowork'ün Scheduled Tasks özelliğini kullanarak bazı işlerini hiç kod yazmadan otomasyona bağlayabilirsin.",
@@ -527,7 +527,7 @@ export const posts: Post[] = [
     category: "ai-otomasyon",
     date: "2026-08-09",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 9/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 9/12",
     body: [
       "Instagram'dan müşteri gelmiyorsa ne yapmalıyım? Instagram hesabımı nasıl analiz edebilirim?",
       "Bu videoda Claude AI ve Windsor.ai kullanarak Instagram Insights verilerini nasıl analiz edeceğini, Instagram büyüme karneni nasıl çıkaracağını ve hangi içeriklerin gerçekten etkileşim getirdiğini data odaklı nasıl göreceğini gösteriyorum.",
@@ -543,7 +543,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-08-10",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 10/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 10/12",
     body: [
       "Instagram için karusel hazırlamak eskiden benim de 1 saatimi alıyordu. Canva'da yaz, düzenle, hizala... Yorucu.",
       "Claude Projects ile Instagram karuseli nasıl yapılır sorusunu 30 saniyede çözdüm.",
@@ -561,7 +561,7 @@ export const posts: Post[] = [
     category: "kadin-uzmanlar-icin-sistemler",
     date: "2026-08-12",
     series: "cowork-giris",
-    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 11/11",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 11/12",
     body: [
       "Gmail'deki 100+ bülten tek komutla nasıl özetlenir?",
       "Claude Cowork'u açtım, Cowork sekmesine geçtim. Gmail + Drive entegrasyonunu bağladım. Not: Drive'ım başka, bültenlerimin olduğu Gmail başka hesaptı, ikisini de bağladım.",
@@ -571,6 +571,24 @@ export const posts: Post[] = [
       "Bitti. Artık \"bültenlerimi tara\" demem yetiyor. Skill ismini ezberlememe gerek yok, Claude ne zaman çağıracağını kendisi anlıyor.",
     ],
     instagramUrl: "https://www.instagram.com/reel/Db8tILrg3Op/",
+  },
+  {
+    slug: "cowork-gun-12-pazarlama-eklentisi",
+    title: "Bu eklentiyi kendime saklayamazdım",
+    excerpt:
+      "Claude Cowork'ün hazır Marketing eklentisini 2 dakikada kurup tek promptla kendi işine göre özelleştirmek.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-14",
+    series: "cowork-giris",
+    seriesLabel: "Claude Cowork'e Giriş Serisi — Gün 12/12",
+    body: [
+      "Bu eklentiyi kendime saklayamazdım. Claude Cowork Marketing Plugin nasıl kurulur?",
+      "Cevap: Claude Desktop > Artı (+) > Eklentiler > Eklentileri Ara > Marketing > Yükle > Yönet > Özelleştir. 2 dakika.",
+      "8 yetenek + 13 bağlayıcı ile geliyor: brand-review, campaign-plan, competitive-brief, content-creation, draft-content, email-sequence, performance-report, seo-audit + Canva, Gmail, Drive, Instagram, Slack, Hubspot, Notion...",
+      "Videoda ne yaptım? Özelleştir'e şu promptu yapıştırdım: \"Customize the 'marketing' plugin for me based on my company.\" Sonra sorduğu 2 soruya cevap verdim: Rakip analizi kimler için? TR'deki AI eğitim programları. Rapor neye baksın? Instagram etkileşim ve erişim.",
+      "Hepsini adım adım rehber yaptım. Ekran görüntüleri, hazır cevaplar ve komutlar içinde. Siteme yükledim.",
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DcB3FOCg_T-/",
   },
 ];
 

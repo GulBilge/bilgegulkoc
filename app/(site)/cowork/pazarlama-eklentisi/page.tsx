@@ -66,7 +66,7 @@ export default function PazarlamaEklentisiPage() {
             ← Claude Cowork&apos;e Giriş Serisi
           </Link>
           <span className="text-xs font-semibold text-stone-500">
-            Video 9 — Rehber
+            Gün 12/12 — Rehber
           </span>
           <h1 className="text-2xl font-semibold tracking-tight text-stone-950 sm:text-3xl">
             Pazarlama Eklentisini Kendi İşine Göre Ayarlamak
@@ -346,6 +346,12 @@ export default function PazarlamaEklentisiPage() {
             sonraki adım, ayarlanmış eklentiyle gerçek bir kampanya planı
             çıkarmak.
           </p>
+          <Link
+            href="/yazilar/cowork-gun-12-pazarlama-eklentisi"
+            className="font-medium text-stone-900 underline underline-offset-2"
+          >
+            Bu günün gönderisini oku →
+          </Link>
           <Link
             href="https://instagram.com/teknikbilgekoc"
             target="_blank"

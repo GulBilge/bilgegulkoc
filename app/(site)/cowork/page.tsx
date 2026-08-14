@@ -68,7 +68,7 @@ export default function CoworkSerisiPage() {
             className="flex flex-col gap-1 py-2"
           >
             <span className="text-xs font-medium text-stone-500">
-              Video 9 — Rehber
+              Gün 12/12 — Rehber
             </span>
             <span className="text-base font-semibold text-stone-950">
               Pazarlama Eklentisini Kendi İşine Göre Ayarlamak
