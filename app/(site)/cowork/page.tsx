@@ -60,6 +60,21 @@ export default function CoworkSerisiPage() {
             </Link>
           ))}
         </div>
+
+        <div className="flex flex-col gap-3 border-t border-stone-200 pt-8">
+          <h2 className="text-lg font-semibold text-stone-950">Rehberler</h2>
+          <Link
+            href="/cowork/pazarlama-eklentisi"
+            className="flex flex-col gap-1 py-2"
+          >
+            <span className="text-xs font-medium text-stone-500">
+              Video 9 — Rehber
+            </span>
+            <span className="text-base font-semibold text-stone-950">
+              Pazarlama Eklentisini Kendi İşine Göre Ayarlamak
+            </span>
+          </Link>
+        </div>
       </div>
     </Section>
   );
