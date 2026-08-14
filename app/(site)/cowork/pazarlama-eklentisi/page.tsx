@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { CopyPromptBlock } from "@/components/CopyPromptBlock";
@@ -34,6 +35,21 @@ function GuideImage({ alt }: { alt: string }) {
     <div className="flex aspect-[9/16] max-w-xs flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-stone-300 bg-stone-50 p-4 text-center text-xs text-stone-400">
       <span>Ekran görüntüsü eklenecek</span>
       <span className="text-stone-500">{alt}</span>
+    </div>
+  );
+}
+
+function GuideScreenshot({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="max-w-xs overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
+      <Image
+        src={src}
+        alt={alt}
+        width={1080}
+        height={1920}
+        sizes="(min-width: 640px) 320px, 100vw"
+        className="h-auto w-full"
+      />
     </div>
   );
 }
@@ -92,7 +108,10 @@ export default function PazarlamaEklentisiPage() {
             <strong className="text-stone-900">Browse plugins</strong>{" "}
             (Eklentilere göz at) seçeneğine tıkla.
           </p>
-          <GuideImage alt="Cowork sohbet kutusunda artı menüsü açılmış, Plugins seçeneğinin üzerinde duruluyor" />
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/01-menu.jpg"
+            alt="Cowork sohbet kutusunda artı işaretine tıklanıyor"
+          />
         </div>
 
         <div className="flex flex-col gap-3">
@@ -106,7 +125,10 @@ export default function PazarlamaEklentisiPage() {
             <strong className="text-stone-900">Marketing</strong> kutusuna
             tıkla.
           </p>
-          <GuideImage alt="Eklenti dizini, Anthropic sekmesinde listelenen hazır eklentiler ve Marketing kutusu" />
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/02-plugin-listesi.jpg"
+            alt="Eklenti dizini, Anthropic sekmesinde listelenen hazır eklentiler ve Marketing kutusu"
+          />
         </div>
 
         <div className="flex flex-col gap-3">
@@ -145,11 +167,18 @@ export default function PazarlamaEklentisiPage() {
             kullanmıyorsan sorun değil, bir sonraki adımda bunları
             temizleyeceğiz.
           </p>
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/03-marketing-detay.jpg"
+            alt="Marketing eklentisinin detay sayfası, becerileri ve bağlantıları"
+          />
           <p className="max-w-2xl text-sm leading-relaxed text-stone-600">
             Sağ üstteki <strong className="text-stone-900">Install</strong>{" "}
             (Kur) düğmesine bas. Kurulum birkaç saniye sürüyor.
           </p>
-          <GuideImage alt="Marketing eklentisinin detay sayfası, becerileri, bağlantıları ve Install düğmesi" />
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/03-yukleniyor.jpg"
+            alt="Marketing eklentisi kuruluyor"
+          />
           <p className="max-w-2xl text-sm leading-relaxed text-stone-600">
             Kurduktan sonra aynı düğmenin yerinde{" "}
             <strong className="text-stone-900">Manage</strong> (Yönet) ve{" "}
@@ -171,7 +200,10 @@ export default function PazarlamaEklentisiPage() {
             özelleştir.&quot; İngilizce yazmak zorunda değilsin, Türkçe de
             yazabilirsin.
           </p>
-          <GuideImage alt="Cowork sohbetinde özelleştirme komutu yazılmış, Claude düşünüyor" />
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/04-komut.jpg"
+            alt="Cowork sohbetinde özelleştirme komutu yazılmış"
+          />
           <p className="max-w-2xl text-sm leading-relaxed text-stone-600">
             Claude bu isteği alınca eklenti özelleştirme becerisini devreye
             sokuyor ve sana sorular sormaya başlıyor.
@@ -209,7 +241,10 @@ export default function PazarlamaEklentisiPage() {
               &apos;deki eğitmenler, kadın girişimciler, global yapay zeka
               eğitmenleri gibi seçenekler geliyor.
             </p>
-            <GuideImage alt="Rakip analizi becerisi için hedef seçimi sorusu" />
+            <GuideScreenshot
+              src="/images/cowork/pazarlama-eklentisi/06-soru-rakip.jpg"
+              alt="Rakip analizi becerisi için hedef seçimi sorusu"
+            />
           </div>
 
           <div className="flex flex-col gap-2">
@@ -222,7 +257,10 @@ export default function PazarlamaEklentisiPage() {
               seçebilirsin. Bir seçeneği anlamıyorsan boş bırakabilirsin —
               &quot;Şimdilik ölçüm yok&quot; gibi bir seçenek de var.
             </p>
-            <GuideImage alt="Performans raporu için veri kaynağı seçimi sorusu" />
+            <GuideScreenshot
+              src="/images/cowork/pazarlama-eklentisi/07-soru-rapor.jpg"
+              alt="Performans raporu için veri kaynağı seçimi sorusu"
+            />
           </div>
         </div>
 
@@ -242,7 +280,10 @@ export default function PazarlamaEklentisiPage() {
             (Eklentiyi kaydet) düğmesi çıkıyor. Ona basınca özelleştirilmiş
             hali kaydediliyor.
           </p>
-          <GuideImage alt="Claude'un çıkardığı özet: kalan bağlantılar, çıkarılan bağlantılar ve Save plugin düğmesi" />
+          <GuideScreenshot
+            src="/images/cowork/pazarlama-eklentisi/08-ozet.jpg"
+            alt="Claude'un çıkardığı özet: kalan bağlantılar, çıkarılan bağlantılar ve Save plugin düğmesi"
+          />
         </div>
 
         <div className="flex flex-col gap-3">
