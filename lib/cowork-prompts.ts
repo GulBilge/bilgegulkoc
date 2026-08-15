@@ -256,3 +256,13 @@ export const folderOrganizerPrompt = `Bu klasördeki dosyaları silmeden organiz
 Türüne göre alt klasörler oluştur. Anlaşılmaz dosya isimlerini anlaşılır olacak şekilde yeniden adlandır.
 
 Başlamadan önce neleri değiştireceğini ve hangi klasörleri oluşturacağını liste olarak yaz, onayımı bekle.`;
+
+export const gmailLabelingPrompt = `Gmail'imi [KAPSAM] tara ve şu 5 etikete göre sınıflandır: [ETİKET 1], [ETİKET 2], [ETİKET 3], [ETİKET 4], [ETİKET 5] (birden fazla kategoriye uyan mailde önceliği [ÖNCELİKLİ ETİKET]'e ver).
+
+Hiçbir maili kalıcı olarak silme — sadece etiketle.
+
+"[ARŞİVLENECEK ETİKET]" olarak işaretlenen ve tarihi bugünden [ARŞİV EŞİĞİ] eski olan mailleri arşivle (arşivleme geri alınabilir, silme değildir); [ARŞİV EŞİĞİ]'nden yeni olanları sadece etiketle, arşivleme.
+
+[HASSAS KATEGORİLER] mailleri otomatik karar vermeden "[İNCELEME ETİKETİ]" etiketiyle ayır.
+
+Önce etiketleme planını çıkar ve kaç mailin hangi etikete gideceğini, kaç mailin arşivleneceğini özetleyen bir rapor sun; benim onayımdan sonra uygula.`;

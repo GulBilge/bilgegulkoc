@@ -50,6 +50,26 @@ export default function CoworkPromptlarPage() {
 
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-stone-500">
+              Gün 3/12
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              Gmail Etiketleme Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Gmail&apos;ini kendi etiketlerine göre sınıflandırıp eski
+              bültenleri geri alınabilir şekilde arşivleyen, herkesin
+              doldurabileceği şablon prompt.
+            </p>
+            <Link
+              href="/cowork/gmail-etiketleme-promptu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
               Gün 5/12
             </span>
             <h2 className="text-lg font-semibold text-stone-950">
