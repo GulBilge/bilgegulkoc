@@ -217,3 +217,52 @@ Sonunda sohbette de kısa bir özet ver.
 Şimdi başla.`;
 
 export const instagramAnalyticsDashboardPrompt = `You are an expert Instagram Strategist and AI Business Consultant for my audience. Task: Do a full Instagram performance audit using the Windsor.ai connector. 1. Connect to my Windsor account and pull my last 50 Instagram posts (Reels, Carousels, Posts). 2. For each post, extract: views, likes, comments, shares, saves, average watch time, hook (first 3 seconds transcript), hook type (curiosity, bold claim, how-to), topic/pillar, format, CTA.3. Analyze and create an interactive HTML dashboard with these sections: Overview: Top 3 and Bottom 3 posts by engagement rate. What's Working: 3 patterns that get most saves/shares. What's Holding You Back: 3 critical mistakes (e.g., weak hooks, no CTA, inconsistent pillar).5 trending topic ideas to test right now based on top performers and current AI trends for small businesses. 3 format experiments for the next 30 days. Style: Direct, data-driven, no fluff. Output as a single HTML file with Tailwind CSS. Always allow the Windsor connector.`;
+
+export const globalInstructionsInterviewPrompt = `ROLÜN:
+Sen bir röportajcısın. Görevin, benim hakkımda kalıcı bir hafıza metni oluşturmak için beni tanımak.
+
+YÖNTEM:
+Bana tek seferde 1 soru sor. Cevabımı bekle. Sonra diğer soruya geç. 7 sorunun hepsini aynı anda sorma.
+
+SORULACAK 7 SORU:
+
+1. KİMLİK: Sen kimsin, ne iş yapıyorsun? Tek cümlede.
+2. KİTLE: Kime yardım ediyorsun, müşterin kim?
+3. DİL: Senin yerine nasıl konuşmalıyım? Tonun nasıl olsun?
+4. YASAKLAR: Asla ne yapmamalıyım?
+5. KELİMELER: Hangi kelimeleri, jargonları asla kullanmamalıyım? Yerine ne demeliyim?
+6. FORMAT: Cevaplarımı nasıl vermeliyim? Kaç maddede, ne kadar uzunlukta?
+7. HASSASİYET: Seni en çok ne sinir eder, ne olursa "bu olmadı" dersin?
+
+ÇIKTI FORMATI:
+7 cevabım bittikten sonra, tüm cevaplarımı birleştir ve aşağıdaki şablonda tek bir "KALICI TALIMAT" metni oluştur:
+
+---
+Ben [İsim]'im. [Ne iş yaptığın].
+[Kitlen] için çalışıyorum.
+Nasıl konuş: [Dil ve ton]
+Asla yapma: [Yasaklar ve kelimeler]
+Cevap şeklin: [Format]
+Unutma: [Hassasiyet]
+---
+
+KURAL:
+- Sade Türkçe kullan
+- Teknik terim kullanma
+- Metin 120 kelimeyi geçmesin`;
+
+export const folderOrganizerPrompt = `Bu klasördeki dosyaları silmeden organize et.
+
+Türüne göre alt klasörler oluştur. Anlaşılmaz dosya isimlerini anlaşılır olacak şekilde yeniden adlandır.
+
+Başlamadan önce neleri değiştireceğini ve hangi klasörleri oluşturacağını liste olarak yaz, onayımı bekle.`;
+
+export const gmailLabelingPrompt = `Gmail'imi [KAPSAM] tara ve şu 5 etikete göre sınıflandır: [ETİKET 1], [ETİKET 2], [ETİKET 3], [ETİKET 4], [ETİKET 5] (birden fazla kategoriye uyan mailde önceliği [ÖNCELİKLİ ETİKET]'e ver).
+
+Hiçbir maili kalıcı olarak silme — sadece etiketle.
+
+"[ARŞİVLENECEK ETİKET]" olarak işaretlenen ve tarihi bugünden [ARŞİV EŞİĞİ] eski olan mailleri arşivle (arşivleme geri alınabilir, silme değildir); [ARŞİV EŞİĞİ]'nden yeni olanları sadece etiketle, arşivleme.
+
+[HASSAS KATEGORİLER] mailleri otomatik karar vermeden "[İNCELEME ETİKETİ]" etiketiyle ayır.
+
+Önce etiketleme planını çıkar ve kaç mailin hangi etikete gideceğini, kaç mailin arşivleneceğini özetleyen bir rapor sun; benim onayımdan sonra uygula.`;
