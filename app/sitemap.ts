@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cowork/newsletter-intelligence",
     "/cowork/instagram-analiz-panosu",
     "/cowork/pazarlama-eklentisi",
+    "/cowork/global-instructions-promptu",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),

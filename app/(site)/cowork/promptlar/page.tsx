@@ -31,7 +31,45 @@ export default function CoworkPromptlarPage() {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-stone-500">
-              Gün 10/11
+              Gün 5/12
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              Instagram Analiz Panosu Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Windsor.ai ile son 50 gönderini analiz edip interaktif bir
+              HTML pano çıkaran prompt.
+            </p>
+            <Link
+              href="/cowork/instagram-analiz-panosu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Gün 7/12
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              Global Instructions Röportaj Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Claude&apos;un seni 7 soruyla tanıyıp Cowork Global
+              Instructions için kalıcı bir hafıza metni çıkardığı prompt.
+            </p>
+            <Link
+              href="/cowork/global-instructions-promptu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Gün 10/12
             </span>
             <h2 className="text-lg font-semibold text-stone-950">
               IG Carousel Sistem Promptu
@@ -50,7 +88,7 @@ export default function CoworkPromptlarPage() {
 
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-stone-500">
-              Gün 11/11
+              Gün 11/12
             </span>
             <h2 className="text-lg font-semibold text-stone-950">
               Bültenimi Tara Promptu
@@ -61,25 +99,6 @@ export default function CoworkPromptlarPage() {
             </p>
             <Link
               href="/cowork/newsletter-intelligence"
-              className="text-sm font-medium text-stone-900 underline underline-offset-2"
-            >
-              Promptu görüntüle ve kopyala →
-            </Link>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <span className="text-xs font-semibold text-stone-500">
-              Gün 5/11
-            </span>
-            <h2 className="text-lg font-semibold text-stone-950">
-              Instagram Analiz Panosu Promptu
-            </h2>
-            <p className="text-sm text-stone-600">
-              Windsor.ai ile son 50 gönderini analiz edip interaktif bir
-              HTML pano çıkaran prompt.
-            </p>
-            <Link
-              href="/cowork/instagram-analiz-panosu"
               className="text-sm font-medium text-stone-900 underline underline-offset-2"
             >
               Promptu görüntüle ve kopyala →

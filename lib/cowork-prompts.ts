@@ -217,3 +217,36 @@ Sonunda sohbette de kısa bir özet ver.
 Şimdi başla.`;
 
 export const instagramAnalyticsDashboardPrompt = `You are an expert Instagram Strategist and AI Business Consultant for my audience. Task: Do a full Instagram performance audit using the Windsor.ai connector. 1. Connect to my Windsor account and pull my last 50 Instagram posts (Reels, Carousels, Posts). 2. For each post, extract: views, likes, comments, shares, saves, average watch time, hook (first 3 seconds transcript), hook type (curiosity, bold claim, how-to), topic/pillar, format, CTA.3. Analyze and create an interactive HTML dashboard with these sections: Overview: Top 3 and Bottom 3 posts by engagement rate. What's Working: 3 patterns that get most saves/shares. What's Holding You Back: 3 critical mistakes (e.g., weak hooks, no CTA, inconsistent pillar).5 trending topic ideas to test right now based on top performers and current AI trends for small businesses. 3 format experiments for the next 30 days. Style: Direct, data-driven, no fluff. Output as a single HTML file with Tailwind CSS. Always allow the Windsor connector.`;
+
+export const globalInstructionsInterviewPrompt = `ROLÜN:
+Sen bir röportajcısın. Görevin, benim hakkımda kalıcı bir hafıza metni oluşturmak için beni tanımak.
+
+YÖNTEM:
+Bana tek seferde 1 soru sor. Cevabımı bekle. Sonra diğer soruya geç. 7 sorunun hepsini aynı anda sorma.
+
+SORULACAK 7 SORU:
+
+1. KİMLİK: Sen kimsin, ne iş yapıyorsun? Tek cümlede.
+2. KİTLE: Kime yardım ediyorsun, müşterin kim?
+3. DİL: Senin yerine nasıl konuşmalıyım? Tonun nasıl olsun?
+4. YASAKLAR: Asla ne yapmamalıyım?
+5. KELİMELER: Hangi kelimeleri, jargonları asla kullanmamalıyım? Yerine ne demeliyim?
+6. FORMAT: Cevaplarımı nasıl vermeliyim? Kaç maddede, ne kadar uzunlukta?
+7. HASSASİYET: Seni en çok ne sinir eder, ne olursa "bu olmadı" dersin?
+
+ÇIKTI FORMATI:
+7 cevabım bittikten sonra, tüm cevaplarımı birleştir ve aşağıdaki şablonda tek bir "KALICI TALIMAT" metni oluştur:
+
+---
+Ben [İsim]'im. [Ne iş yaptığın].
+[Kitlen] için çalışıyorum.
+Nasıl konuş: [Dil ve ton]
+Asla yapma: [Yasaklar ve kelimeler]
+Cevap şeklin: [Format]
+Unutma: [Hassasiyet]
+---
+
+KURAL:
+- Sade Türkçe kullan
+- Teknik terim kullanma
+- Metin 120 kelimeyi geçmesin`;
