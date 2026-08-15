@@ -250,3 +250,9 @@ KURAL:
 - Sade Türkçe kullan
 - Teknik terim kullanma
 - Metin 120 kelimeyi geçmesin`;
+
+export const folderOrganizerPrompt = `Bu klasördeki dosyaları silmeden organize et.
+
+Türüne göre alt klasörler oluştur. Anlaşılmaz dosya isimlerini anlaşılır olacak şekilde yeniden adlandır.
+
+Başlamadan önce neleri değiştireceğini ve hangi klasörleri oluşturacağını liste olarak yaz, onayımı bekle.`;

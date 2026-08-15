@@ -31,6 +31,25 @@ export default function CoworkPromptlarPage() {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-stone-500">
+              Gün 2/12
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              Klasör Organize Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Bir klasördeki dosyaları silmeden türüne göre klasörleyip
+              anlaşılır isimlerle yeniden adlandıran prompt.
+            </p>
+            <Link
+              href="/cowork/klasor-organize-promptu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
               Gün 5/12
             </span>
             <h2 className="text-lg font-semibold text-stone-950">
