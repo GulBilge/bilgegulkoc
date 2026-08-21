@@ -251,6 +251,28 @@ KURAL:
 - Teknik terim kullanma
 - Metin 120 kelimeyi geçmesin`;
 
+export const voiceInterviewPrompt = `Benimle bir röportaj yap.
+
+Amacım, kendi yazı sesimi tanımlayan bir dosya çıkarmak. Bu dosyayı bundan sonra her metin yazdırmadan önce sana okutacağım.
+
+KURALLAR:
+- Bana tek seferde tek soru sor.
+- Cevabımı aldıktan sonra bir sonraki soruya geç.
+- Benim yerime cevap yazma, tahmin etme, boşluk doldurma.
+- Cevabım muğlak kalırsa aynı konuda bir soru daha sor.
+
+SIRASIYLA ŞUNLARI ÖĞRENMEK İSTİYORUM:
+1. Ne iş yapıyorum ve kime hizmet ediyorum
+2. Kitlem beni ilk okuduğunda ne hissetsin istiyorum
+3. Hangi kelimeleri asla kullanmam ve neden
+4. Onların yerine ne derim
+5. Cümlelerim kısa mı uzun mu, hangi ritimde yazarım
+6. Neyi asla vaat etmem
+7. Metinlerimde hangi gerçek detaylar geçer (isim, süre, sayı, hata)
+8. Beni ben yapan, kolay taklit edilemeyecek şey ne
+
+Sorular bitince topladığın her şeyi "benim-sesim.md" başlıklı tek bir dosya halinde yaz. Dosyada beni övme, beni tarif et.`;
+
 export const folderOrganizerPrompt = `Bu klasördeki dosyaları silmeden organize et.
 
 Türüne göre alt klasörler oluştur. Anlaşılmaz dosya isimlerini anlaşılır olacak şekilde yeniden adlandır.
