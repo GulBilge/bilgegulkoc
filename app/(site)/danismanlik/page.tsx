@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
   "Danışmanlık",
-  "Tek konu, 60 dakika, net bir yol haritası. Uzman kadınlar için yapay zeka danışmanlığı talep formu."
+  "Tek konu, tek problem, net bir yol haritası. Yapay zeka araçlarıyla çözüm odaklı danışmanlık talep formu."
 );
 
 export default function DanismanlikPage() {
@@ -19,9 +19,10 @@ export default function DanismanlikPage() {
               Danışmanlık
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-stone-600">
-              Tek konu, 60 dakika, net bir yol haritası. İşinde takıldığın tek
-              bir noktayı birlikte açıyoruz — ve oradan nasıl ilerleyeceğini
-              elinde somut bir planla bitiriyorsun.
+              Tek konu, tek problem, net bir yol haritası. İşinde takıldığın
+              tek bir noktayı yapay zeka araçlarıyla nasıl çözeceğini birlikte
+              açıyoruz ve oradan nasıl ilerleyeceğini elinde somut bir
+              planla bitiriyorsun.
             </p>
           </div>
 
@@ -30,9 +31,10 @@ export default function DanismanlikPage() {
               Kimler için
             </h2>
             <p className="max-w-xl text-base leading-relaxed text-stone-600">
-              Kendi işini yürüten kadın uzmanlar — koçlar, diyetisyenler,
-              eğitmenler, danışmanlar, terapistler. Sistem kurmak istiyor ama
-              nereden başlayacağını bilmiyorsan, buradasın demektir.
+              Kendi işini yürüten herkes koçlar, diyetisyenler, eğitmenler,
+              danışmanlar, terapistler ve daha fazlası. İşinde takıldığın tek
+              bir noktayı yapay zeka araçlarını kullanarak çözmek istiyorsan,
+              buradasın demektir.
             </p>
           </div>
 
@@ -46,7 +48,8 @@ export default function DanismanlikPage() {
               <li>3. Uygunsa tarih ve ödeme bilgisi paylaşılır.</li>
             </ol>
             <p className="max-w-xl text-sm leading-relaxed text-stone-500">
-              Ücret bilgisi görüşme sonrasında paylaşılır.
+              Görüşmenin kaç dakika süreceği ve ücret bilgisi, netleştirme
+              görüşmesinden sonra paylaşılır.
             </p>
           </div>
 
@@ -55,10 +58,10 @@ export default function DanismanlikPage() {
               Kimler için uygun değil
             </h2>
             <p className="max-w-xl text-base leading-relaxed text-stone-600">
-              Kurumsal entegrasyon projeleri, hazır yazılım desteği ve uzun
-              vadeli ajans işleri için doğru adres değilim. Bu talepler için
-              başka bir yapıya ihtiyacın var demektir — dürüstçe söylemek
-              isterim.
+              Kurumsal entegrasyon projeleri, hazır yazılım desteği, uzun
+              vadeli ajans işleri ve yapay zeka araçlarıyla çözülemeyecek
+              problemler için doğru adres değilim. Bu talepler için başka bir
+              yapıya ihtiyacın var demektir, dürüstçe söylemek isterim.
             </p>
           </div>
 
