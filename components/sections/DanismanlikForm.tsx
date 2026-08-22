@@ -36,15 +36,6 @@ const UYGUN_ZAMAN_OPTIONS = [
   "Farketmez",
 ];
 
-function encode(data: Record<string, string>) {
-  return Object.entries(data)
-    .map(
-      ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-    )
-    .join("&");
-}
-
 export function DanismanlikForm() {
   const [adSoyad, setAdSoyad] = useState("");
   const [email, setEmail] = useState("");
@@ -55,6 +46,7 @@ export function DanismanlikForm() {
   const [aiDuzeyi, setAiDuzeyi] = useState("");
   const [uygunZaman, setUygunZaman] = useState("");
   const [kvkk, setKvkk] = useState(false);
+  const [botField, setBotField] = useState("");
 
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -85,20 +77,20 @@ export function DanismanlikForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/__forms.html", {
+      const response = await fetch("/api/danismanlik", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "danismanlik",
-          "ad-soyad": adSoyad,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          adSoyad,
           email,
           instagram,
           meslek,
           konu,
           zorluk,
-          "ai-duzeyi": aiDuzeyi,
-          "uygun-zaman": uygunZaman,
-          kvkk: kvkk ? "Evet" : "",
+          aiDuzeyi,
+          uygunZaman,
+          kvkk,
+          botField,
         }),
       });
 
@@ -136,7 +128,13 @@ export function DanismanlikForm() {
       <p className="hidden">
         <label>
           Bu alanı boş bırak
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
+          <input
+            name="bot-field"
+            value={botField}
+            onChange={(e) => setBotField(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </label>
       </p>
 

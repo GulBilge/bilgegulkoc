@@ -34,36 +34,18 @@ export function EmailPopup() {
     setErrorMessage("");
 
     try {
-      let alreadySubscribed = false;
-      try {
-        const checkResponse = await fetch("/api/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
-        });
-        if (checkResponse.ok) {
-          const data = await checkResponse.json();
-          alreadySubscribed = Boolean(data.alreadySubscribed);
-        }
-      } catch {
-        // Sunucu tarafı kontrol başarısız olursa yine de kaydı engelleme.
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Bir şeyler ters gitti.");
       }
 
-      if (!alreadySubscribed) {
-        const formData = new URLSearchParams();
-        formData.append("form-name", "abone");
-        formData.append("email", email);
-
-        const response = await fetch("/__forms.html", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: formData.toString(),
-        });
-
-        if (!response.ok) {
-          throw new Error("Bir şeyler ters gitti.");
-        }
-      }
+      const data = await response.json();
+      const alreadySubscribed = Boolean(data.alreadySubscribed);
 
       localStorage.setItem(SUBSCRIBED_KEY, "true");
       setStatus(alreadySubscribed ? "already" : "success");

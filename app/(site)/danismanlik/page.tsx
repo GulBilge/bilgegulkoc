@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { DanismanlikForm } from "@/components/sections/DanismanlikForm";
-import { DanismanlikHiddenForm } from "@/components/DanismanlikHiddenForm";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
@@ -80,7 +79,6 @@ export default function DanismanlikPage() {
           </p>
         </div>
       </Section>
-      <DanismanlikHiddenForm />
     </>
   );
 }

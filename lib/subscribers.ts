@@ -1,4 +1,5 @@
 import { getStore } from "@netlify/blobs";
+import { submitToSheet } from "@/lib/google-sheets";
 
 const STORE_NAME = "subscribers";
 
@@ -25,5 +26,14 @@ export async function checkAndRegisterSubscriber(rawEmail: string) {
   }
 
   await store.set(email, JSON.stringify({ subscribedAt: new Date().toISOString() }));
+
+  try {
+    await submitToSheet("abone", { email, date: new Date().toISOString() });
+  } catch (error) {
+    // Abonelik kaydı (Blobs) zaten tamamlandı; sheet'e yazamamak aboneliği
+    // başarısız saymamalı, sadece loglanıp geçilmeli.
+    console.error("Abone sheet'e yazılamadı:", error);
+  }
+
   return { alreadySubscribed: false };
 }

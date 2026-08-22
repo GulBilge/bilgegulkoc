@@ -2,7 +2,6 @@ import { Section } from "@/components/ui/Section";
 import { Hero } from "@/components/sections/Hero";
 import { ProofPoints } from "@/components/sections/ProofPoints";
 import { CTA } from "@/components/sections/CTA";
-import { HiddenNetlifyForm } from "@/components/HiddenNetlifyForm";
 import { siteConfig } from "@/lib/site";
 
 export default function HomePage() {
@@ -21,7 +20,6 @@ export default function HomePage() {
           label="Instagram'da DM'e CLAUDE yaz"
         />
       </Section>
-      <HiddenNetlifyForm />
     </>
   );
 }
