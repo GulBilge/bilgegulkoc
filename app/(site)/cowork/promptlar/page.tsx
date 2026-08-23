@@ -163,6 +163,25 @@ export default function CoworkPromptlarPage() {
               Promptu görüntüle ve kopyala →
             </Link>
           </div>
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-semibold text-stone-500">
+              Bonus
+            </span>
+            <h2 className="text-lg font-semibold text-stone-950">
+              60 İçerik Fikri Promptu
+            </h2>
+            <p className="text-sm text-stone-600">
+              Tek oturumda 60 Instagram carousel fikri çıkaran, sırayla
+              kullanılacak 7 promptluk seri.
+            </p>
+            <Link
+              href="/cowork/60-icerik-fikri-promptu"
+              className="text-sm font-medium text-stone-900 underline underline-offset-2"
+            >
+              Promptu görüntüle ve kopyala →
+            </Link>
+          </div>
         </div>
       </div>
     </Section>
