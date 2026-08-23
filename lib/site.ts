@@ -22,6 +22,7 @@ export const primaryNav = [
   { label: "Hakkımda", href: "/hakkimda" },
   { label: "Ne Yapıyorum", href: "/ne-yapiyorum" },
   { label: "Danışmanlık", href: "/danismanlik" },
+  { label: "Güçlenme Programı", href: "/guclenme-programi" },
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
   { label: "Yazılar", href: "/yazilar" },
   { label: "21 Gün Claude", href: "/21gunClaude" },
