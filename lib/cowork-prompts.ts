@@ -288,3 +288,98 @@ Hiçbir maili kalıcı olarak silme — sadece etiketle.
 [HASSAS KATEGORİLER] mailleri otomatik karar vermeden "[İNCELEME ETİKETİ]" etiketiyle ayır.
 
 Önce etiketleme planını çıkar ve kaç mailin hangi etikete gideceğini, kaç mailin arşivleneceğini özetleyen bir rapor sun; benim onayımdan sonra uygula.`;
+
+export const contentIdeasPrompts = [
+  {
+    baslik: "1. Prompt — Önce sesini tanımla",
+    prompt: `Sen [uzmanlık alanın] alanında bir uzmansın.
+[İdeal müşterin] için içerikler üretiyorsun.
+Amacın onların [istediği sonuç] elde etmesine yardımcı olmak.
+İçerik tonun: [3 kelime yaz: örn. samimi, net, cesaret verici]
+Bundan sonra yazacağın tüm içerikleri bu bakış açısından üret.
+Önce bana bu konumlandırmaya göre kısa bir marka sesi özeti çıkar.`,
+  },
+  {
+    baslik: "2. Prompt — İçerik sütunlarını oluştur",
+    prompt: `Benim nişim: [nişini yaz]
+İdeal müşterim: [ideal müşterini yaz]
+Sunduğum hizmet/ürün: [hizmetini yaz]
+Bana bu niş için ideal müşterimin gerçekten önemsediği ve beni uzman olarak konumlandıracak 10 içerik konusu ver.
+Her konu şu 3 şeye hizmet etsin:
+Hedef kitlemin yaşadığı gerçek bir problemi göstersin
+Benim uzmanlığımı görünür kılsın
+Potansiyel müşteriyi bana bir adım yaklaştırsın
+Cevabı tablo halinde ver: Konu | Hedef kitlenin problemi | Bu konu beni nasıl uzman gösterir?`,
+  },
+  {
+    baslik: "3. Prompt — Her konuyu carousel fikrine dönüştür",
+    prompt: `Aşağıdaki içerik konusunu al:
+[KONUYU BURAYA YAPIŞTIR]
+Bu konu için hedef kitlemin inandığı bir şeyi sorgulayan, dikkat çeken ve net bir dönüşüm gösteren 6 Instagram carousel fikri üret.
+Her fikir için şunları yaz:
+Carousel başlığı
+Hangi inancı sorguluyor?
+Okuyucu içerikten ne fark edecek?
+İçeriğin sonunda hangi aksiyona yaklaşacak?
+Fikirler sıradan olmasın. Merak uyandırsın, kaydedilmeye değer olsun ve beni uzman olarak konumlandırsın.`,
+  },
+  {
+    baslik: "4. Prompt — Carousel taslağı oluştur",
+    prompt: `Şu carousel fikrini 10 slaytlık Instagram carousel taslağına dönüştür:
+[CAROUSEL FİKRİNİ BURAYA YAPIŞTIR]
+Şu yapıyı kullan:
+Kanca
+Problem
+Neden önemli?
+Yanlış bilinen şey
+Doğru bakış açısı
+Nasıl uygulanır?
+Örnek
+Mini özet
+Sonuç
+CTA
+Her slayt için kısa, net ve Instagram'da okunabilir metin yaz.
+Dil sade, samimi ve uzmanlık hissi veren bir dil olsun.`,
+  },
+  {
+    baslik: "5. Prompt — Kancayı güçlendir",
+    prompt: `Aşağıdaki carousel ilk slayt kancasını daha güçlü hale getir:
+[KANCAYI BURAYA YAPIŞTIR]
+Bana 10 farklı versiyon yaz.
+Kancalar:
+Daha kısa olsun
+Daha net olsun
+Merak uyandırsın
+Hedef kitlemin "bu benim problemim" demesini sağlasın
+Abartılı clickbait gibi durmasın
+Sonra bu 10 kanca içinden en güçlü 3 tanesini seç ve neden güçlü olduklarını açıkla.`,
+  },
+  {
+    baslik: "6. Prompt — Açıklama/caption yaz",
+    prompt: `Aşağıdaki carousel için Instagram açıklaması yaz:
+[CAROUSEL TASLAĞINI BURAYA YAPIŞTIR]
+Açıklama şu yapıda olsun:
+İlk cümlede problemi net söyle
+Sonra okuyucunun yaşadığı durumu anlat
+Carousel'deki fikri biraz daha aç
+Kaydetmeye teşvik et
+Sonunda yorum CTA'sı ekle
+CTA şu olsun:
+"Hazır promptları istersen yorumlara PLAN yaz. Sana DM'den göndereyim."
+Dil: samimi, sade, uzman ama kasıntı olmayan.`,
+  },
+  {
+    baslik: "7. Prompt — Tek oturumda 60 fikir üret",
+    prompt: `Şimdi benim için tek oturumda içerik planı üret.
+Benim nişim: [nişini yaz]
+İdeal müşterim: [ideal müşterini yaz]
+Sunduğum hizmet/ürün: [hizmetini yaz]
+Tonum: [3 kelime yaz]
+Önce 10 içerik sütunu çıkar.
+Sonra her içerik sütunu için 6 carousel fikri üret.
+Toplam 60 carousel fikri olsun.
+Cevabı tablo halinde ver:
+İçerik sütunu | Carousel fikri | Hangi problemi çözüyor? | Kanca önerisi | CTA önerisi
+Fikirler tekrara düşmesin. Her biri farklı bir açıdan gelsin.`,
+  },
+];
