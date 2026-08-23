@@ -17,12 +17,20 @@ export const siteConfig = {
   ],
 };
 
-export const primaryNav = [
+type NavLink = { label: string; href: string };
+type NavGroup = { label: string; items: NavLink[] };
+
+export const primaryNav: (NavLink | NavGroup)[] = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Hakkımda", href: "/hakkimda" },
   { label: "Ne Yapıyorum", href: "/ne-yapiyorum" },
-  { label: "Danışmanlık", href: "/danismanlik" },
-  { label: "Güçlenme Programı", href: "/guclenme-programi" },
+  {
+    label: "Formlar",
+    items: [
+      { label: "Danışmanlık", href: "/danismanlik" },
+      { label: "Güçlenme Programı", href: "/guclenme-programi" },
+    ],
+  },
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
   { label: "Yazılar", href: "/yazilar" },
   { label: "21 Gün Claude", href: "/21gunClaude" },
