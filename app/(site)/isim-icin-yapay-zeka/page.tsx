@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
-import { GuclenmeProgramiForm } from "@/components/sections/GuclenmeProgramiForm";
+import { IsimIcinYapayZekaForm } from "@/components/sections/IsimIcinYapayZekaForm";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
-  "Yapay Zeka İle Güçlenme Programı",
-  "Uzman kadınlar için yapay zeka araçlarını işine katmayı öğrendiğin program. Ön kayıt formunu doldur, detayları ilk sen öğren."
+  "İşim İçin Yapay Zeka Eğitim Programı",
+  "Uzman kadınlar için yapay zeka araçlarını işine katmayı öğrendiğin eğitim programı. Ön kayıt formunu doldur, detayları ilk sen öğren."
 );
 
-export default function GuclenmeProgramiPage() {
+export default function IsimIcinYapayZekaPage() {
   return (
     <>
       <Section>
         <div className="flex flex-col gap-16">
           <div className="flex flex-col gap-4">
             <h1 className="text-2xl font-semibold tracking-tight text-stone-950">
-              Yapay Zeka İle Güçlenme Programı
+              İşim İçin Yapay Zeka Eğitim Programı
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-stone-600">
               Kendi işini yürüten kadınların yapay zeka araçlarını işine
@@ -56,7 +56,7 @@ export default function GuclenmeProgramiPage() {
               Ön kayıt formu
             </h2>
             <div className="max-w-xl">
-              <GuclenmeProgramiForm />
+              <IsimIcinYapayZekaForm />
             </div>
           </div>
 

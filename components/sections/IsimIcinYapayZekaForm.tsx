@@ -13,7 +13,7 @@ type Errors = Partial<
 
 const AI_DUZEYI_OPTIONS = ["Hiç kullanmadım", "Ara sıra", "Düzenli kullanıyorum"];
 
-export function GuclenmeProgramiForm() {
+export function IsimIcinYapayZekaForm() {
   const [adSoyad, setAdSoyad] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
@@ -51,7 +51,7 @@ export function GuclenmeProgramiForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/guclenme-programi", {
+      const response = await fetch("/api/isim-icin-yapay-zeka", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

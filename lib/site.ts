@@ -28,7 +28,7 @@ export const primaryNav: (NavLink | NavGroup)[] = [
     label: "Formlar",
     items: [
       { label: "Danışmanlık", href: "/danismanlik" },
-      { label: "Güçlenme Programı", href: "/guclenme-programi" },
+      { label: "İşim İçin Yapay Zeka", href: "/isim-icin-yapay-zeka" },
     ],
   },
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
