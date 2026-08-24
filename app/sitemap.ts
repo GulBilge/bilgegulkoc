@@ -49,6 +49,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}/rehber`,
       lastModified: new Date(),
     },
+    {
+      url: `${siteConfig.url}/rehber/claude-dort-calisma-modu`,
+      lastModified: new Date(),
+    },
   ];
 
   return [

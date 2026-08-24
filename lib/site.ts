@@ -35,6 +35,11 @@ export const primaryNav: (NavLink | NavGroup)[] = [
   { label: "Yazılar", href: "/yazilar" },
   { label: "21 Gün Claude", href: "/21gunClaude" },
   { label: "Cowork Serisi", href: "/cowork" },
+  {
+    label: "Kaynaklar",
+    items: [
+      { label: "Promptlar", href: "/promptlar" },
+      { label: "Rehberler", href: "/rehberler" },
+    ],
+  },
 ];
-
-export const upcomingNav = [{ label: "Kaynaklar" }];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { primaryNav, upcomingNav } from "@/lib/site";
+import { primaryNav } from "@/lib/site";
 
 export function Nav() {
   return (
@@ -35,15 +35,6 @@ export function Nav() {
           </Link>
         )
       )}
-      {upcomingNav.map((item) => (
-        <span
-          key={item.label}
-          aria-disabled="true"
-          className="text-sm font-medium text-stone-400 cursor-default"
-        >
-          {item.label} <span className="text-xs">(yakında)</span>
-        </span>
-      ))}
     </nav>
   );
 }
