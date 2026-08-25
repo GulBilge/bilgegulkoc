@@ -17,6 +17,7 @@ export function IsimIcinYapayZekaForm() {
   const [adSoyad, setAdSoyad] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
+  const [instagram, setInstagram] = useState("");
   const [meslek, setMeslek] = useState("");
   const [aiDuzeyi, setAiDuzeyi] = useState("");
   const [beklenti, setBeklenti] = useState("");
@@ -58,6 +59,7 @@ export function IsimIcinYapayZekaForm() {
           adSoyad,
           email,
           telefon,
+          instagram,
           meslek,
           aiDuzeyi,
           beklenti,
@@ -143,6 +145,18 @@ export function IsimIcinYapayZekaForm() {
           aria-invalid={Boolean(errors.telefon)}
           aria-describedby={errors.telefon ? "telefon-error" : undefined}
           className={inputClass(Boolean(errors.telefon))}
+        />
+      </Field>
+
+      <Field label="Instagram sayfanız" htmlFor="instagram">
+        <input
+          id="instagram"
+          name="instagram"
+          type="text"
+          value={instagram}
+          onChange={(e) => setInstagram(e.target.value)}
+          placeholder="isteğe bağlı"
+          className={inputClass(false)}
         />
       </Field>
 

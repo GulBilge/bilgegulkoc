@@ -20,6 +20,7 @@ export async function POST(request: Request) {
   const adSoyad = typeof body.adSoyad === "string" ? body.adSoyad.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const telefon = typeof body.telefon === "string" ? body.telefon.trim() : "";
+  const instagram = typeof body.instagram === "string" ? body.instagram.trim() : "";
   const meslek = typeof body.meslek === "string" ? body.meslek.trim() : "";
   const aiDuzeyi = typeof body.aiDuzeyi === "string" ? body.aiDuzeyi.trim() : "";
   const beklenti = typeof body.beklenti === "string" ? body.beklenti.trim() : "";
@@ -43,6 +44,7 @@ export async function POST(request: Request) {
       adSoyad,
       email,
       telefon,
+      instagram,
       meslek,
       aiDuzeyi,
       beklenti,
