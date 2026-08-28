@@ -590,6 +590,23 @@ export const posts: Post[] = [
     ],
     instagramUrl: "https://www.instagram.com/reel/DcB3FOCg_T-/",
   },
+  {
+    slug: "seo-aeo-geo-ayni-metnin-dort-hali",
+    title: "SEO, AEO ve GEO: Aynı Metnin Dört Hâli",
+    excerpt:
+      "Tek bir ham metnin SEO, AEO ve GEO için nasıl yeniden yazıldığını gösteren pratik bir rehber.",
+    category: "ai-otomasyon",
+    date: "2026-08-28",
+    body: [
+      "SEO'yu herkes biliyor. Ama artık pek çok kişi sorusunu doğrudan yapay zekaya soruyor. Bu da klasik SEO'nun tek başına etkisini azaltıyor. Aynı ham metni üç farklı optimizasyon yaklaşımıyla nasıl yeniden yazdığımı göstereyim.",
+      "SEO (arama motoru optimizasyonu), doğru anahtar kelimelerle arama sonuçlarında öne çıkmanı sağlar. Başlık hiyerarşisi kurulur, hedef kelime başlıkta ve ilk 100 kelimede geçer, alt başlıklar arama sorgusu formatında yazılır.",
+      "AEO (yanıt motoru optimizasyonu) dostu bir yazı için hedef kitlenin en çok sorduğu soruyu ve net yanıtını yazının en başına koyman gerekiyor. Yanıt 40-60 kelimeyi geçmemeli ve tek başına anlaşılabilir olmalı — kural basit: önce cevap, sonra bağlam.",
+      "GEO (üretken motor optimizasyonu) ise yapay zeka sohbetlerinde kaynak gösterilmeni hedefler. Google'ın üst sıralarındaki bağlantılar ile yapay zekanın alıntıladığı kaynaklar arasındaki örtüşme %70'ten %20'nin altına düştü. Princeton, Georgia Tech ve Allen Institute'ın ortak çalışmasında en iyi sonucu veren yöntemler kaynak gösterme, alıntı ekleme ve istatistik eklemekti — bunlar görünürlüğü %30-40 artırdı. Anahtar kelime yığma gibi klasik SEO taktikleri ise üretken motorlarda işe yaramadı.",
+      "Örneğin dijital pazarlama eğitimi satıyorsan ve hedef kitlen Claude Chat'e \"hangi eğitimi almalıyım\" diye soruyorsa, içeriğinde net tanımlar, tarihli veriler ve dış kaynak referansları olmalı. İstatistik, tanım, karşılaştırma, fiyat, tarih, referans — bunlar üretken modelin seçip atfedebileceği birimler.",
+      "En güvenlisi üçünü birlikte kurgulamak: başlıkta anahtar kelime, ilk paragrafta soru-yanıt, gövdede kanıt. İşi şansa bırakma.",
+    ],
+    instagramUrl: "https://www.instagram.com/p/DcmGjUVAZsj/",
+  },
 ];
 
 export function getCategory(slug: string): Category | undefined {
