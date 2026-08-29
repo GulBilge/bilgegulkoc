@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section } from "@/components/ui/Section";
 import { InstagramEmbed } from "@/components/InstagramEmbed";
+import { PostBlocks } from "@/components/PostBlocks";
 import { pageMetadata } from "@/lib/metadata";
 import { categories, getPostBySlug, posts } from "@/lib/yazilar";
 
@@ -64,13 +65,17 @@ export default async function YaziDetayPage({
           </h1>
         </div>
 
-        <div className="flex max-w-xl flex-col gap-4">
-          {post.body.map((paragraph, i) => (
-            <p key={i} className="text-base leading-relaxed text-stone-700">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        {post.blocks ? (
+          <PostBlocks blocks={post.blocks} />
+        ) : (
+          <div className="flex max-w-xl flex-col gap-4">
+            {post.body?.map((paragraph, i) => (
+              <p key={i} className="text-base leading-relaxed text-stone-700">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        )}
 
         <div className="flex flex-col gap-3">
           <p className="text-sm text-stone-500">Bu yazı önce Instagram&apos;da paylaşıldı:</p>

@@ -9,6 +9,15 @@ export const categories: Category[] = [
   { slug: "anne-girisimci-notlari", label: "Anne-Girişimci Notları" },
 ];
 
+export type ContentBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "quote"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
+  | { type: "links"; items: { label: string; url: string }[] };
+
 export type Post = {
   slug: string;
   title: string;
@@ -17,7 +26,10 @@ export type Post = {
   date: string;
   series?: string;
   seriesLabel?: string;
-  body: string[];
+  /** Plain-paragraph body. Used when `blocks` is not set. */
+  body?: string[];
+  /** Structured body (headings, quotes, lists, tables, links). Takes precedence over `body`. */
+  blocks?: ContentBlock[];
   instagramUrl: string;
 };
 
@@ -597,13 +609,265 @@ export const posts: Post[] = [
       "Tek bir ham metnin SEO, AEO ve GEO için nasıl yeniden yazıldığını gösteren pratik bir rehber.",
     category: "ai-otomasyon",
     date: "2026-08-28",
-    body: [
-      "SEO'yu herkes biliyor. Ama artık pek çok kişi sorusunu doğrudan yapay zekaya soruyor. Bu da klasik SEO'nun tek başına etkisini azaltıyor. Aynı ham metni üç farklı optimizasyon yaklaşımıyla nasıl yeniden yazdığımı göstereyim.",
-      "SEO (arama motoru optimizasyonu), doğru anahtar kelimelerle arama sonuçlarında öne çıkmanı sağlar. Başlık hiyerarşisi kurulur, hedef kelime başlıkta ve ilk 100 kelimede geçer, alt başlıklar arama sorgusu formatında yazılır.",
-      "AEO (yanıt motoru optimizasyonu) dostu bir yazı için hedef kitlenin en çok sorduğu soruyu ve net yanıtını yazının en başına koyman gerekiyor. Yanıt 40-60 kelimeyi geçmemeli ve tek başına anlaşılabilir olmalı — kural basit: önce cevap, sonra bağlam.",
-      "GEO (üretken motor optimizasyonu) ise yapay zeka sohbetlerinde kaynak gösterilmeni hedefler. Google'ın üst sıralarındaki bağlantılar ile yapay zekanın alıntıladığı kaynaklar arasındaki örtüşme %70'ten %20'nin altına düştü. Princeton, Georgia Tech ve Allen Institute'ın ortak çalışmasında en iyi sonucu veren yöntemler kaynak gösterme, alıntı ekleme ve istatistik eklemekti — bunlar görünürlüğü %30-40 artırdı. Anahtar kelime yığma gibi klasik SEO taktikleri ise üretken motorlarda işe yaramadı.",
-      "Örneğin dijital pazarlama eğitimi satıyorsan ve hedef kitlen Claude Chat'e \"hangi eğitimi almalıyım\" diye soruyorsa, içeriğinde net tanımlar, tarihli veriler ve dış kaynak referansları olmalı. İstatistik, tanım, karşılaştırma, fiyat, tarih, referans — bunlar üretken modelin seçip atfedebileceği birimler.",
-      "En güvenlisi üçünü birlikte kurgulamak: başlıkta anahtar kelime, ilk paragrafta soru-yanıt, gövdede kanıt. İşi şansa bırakma.",
+    blocks: [
+      {
+        type: "p",
+        text: "Bu yazı, tek bir ham metnin SEO, AEO ve GEO optimizasyonuyla nasıl dört farklı hâle geldiğini gösteren bir eğitim materyali. Amaç teori anlatmak değil; aynı bilginin farklı okuyucular için nasıl yeniden yapılandırıldığını somut olarak göstermek. Kendi ham metnini bu şablonu takip ederek dört versiyona çevirebilirsin.",
+      },
+      { type: "h2", text: "0. Ham metin (başlangıç noktası)" },
+      {
+        type: "quote",
+        text: "SEO arama motorlarının getirdiği sonuçlarda öne çıkmanızı sağlar. Doğru kelimeler ile bunu sağlarsınız. Ama artık herkes yapay zekaya soruyor. Bu da SEO'nun etkililiğini azaltıyor. AEO dostu bir yazı için hedef kitlenizin işletmenizi ilgilendiren en çok sorduğu soruyu ve yanıtını yazınızın en başına koymalısınız. Diğer yandan örneğin dijital pazarlama ile ilgili bir eğitim satıyorsanız ve hedef kitleniz bu konuda eğitim arıyor ve bunun için Claude Chat'i kullanıyorsa, Claude Chat'in sizi önermesi için GEO dostu yazı yazmalısınız. Hatta en iyisi hem SEO hem AEO hem GEO dostu yazı yazmanız. İşi şansa bırakmayın.",
+      },
+      {
+        type: "p",
+        text: "Ham metnin durumu: Bilgi doğru ve eksiksiz. Ama yapısı yok — başlık yok, soru yok, kanıt yok. Yani ne arama motoru, ne yanıt motoru, ne de yapay zeka asistanı bu metni rahatça kullanabilir.",
+      },
+
+      { type: "h2", text: "1. Sadece SEO dostu hâli" },
+      {
+        type: "h3",
+        text: "SEO, AEO ve GEO Nedir? Yapay Zeka Çağında İçerik Optimizasyonu",
+      },
+      {
+        type: "p",
+        text: "Meta açıklama: SEO, AEO ve GEO arasındaki farkı öğrenin. Arama motorlarında ve yapay zeka sohbetlerinde öne çıkmak için içerik optimizasyonu rehberi.",
+      },
+      { type: "h3", text: "SEO nedir?" },
+      {
+        type: "p",
+        text: "SEO (arama motoru optimizasyonu), arama motorlarının getirdiği sonuçlarda öne çıkmanızı sağlar. Doğru anahtar kelimeler (keywords) ile bunu sağlarsınız. Ancak kullanıcı davranışı değişti: artık pek çok kişi sorusunu doğrudan yapay zekaya soruyor. Bu da klasik SEO'nun tek başına etkililiğini azaltıyor.",
+      },
+      { type: "h3", text: "AEO nedir?" },
+      {
+        type: "p",
+        text: "AEO (yanıt motoru optimizasyonu) dostu bir yazı için, hedef kitlenizin işletmenizi ilgilendiren en çok sorduğu soruyu ve yanıtını yazınızın en başına koymalısınız.",
+      },
+      { type: "h3", text: "GEO nedir?" },
+      {
+        type: "p",
+        text: "GEO (üretken motor optimizasyonu), yapay zeka sohbetlerinde önerilmenizi hedefler. Örneğin dijital pazarlama eğitimi satıyorsanız ve hedef kitleniz Claude Chat üzerinden eğitim arıyorsa, Claude'un sizi önermesi için GEO dostu içerik üretmelisiniz.",
+      },
+      { type: "h3", text: "SEO, AEO ve GEO birlikte nasıl kullanılır?" },
+      {
+        type: "p",
+        text: "En iyisi hem SEO hem AEO hem GEO dostu yazmanız. İşi şansa bırakmayın.",
+      },
+      {
+        type: "quote",
+        text: "Ne değişti: Başlık hiyerarşisi (H1-H2-H3) kuruldu. Hedef anahtar kelime başlıkta ve ilk 100 kelimede geçiyor. Alt başlıklar arama sorgusu formatında yazıldı (\"SEO nedir?\"). Meta açıklama eklendi.",
+      },
+
+      { type: "h2", text: "2. Sadece AEO dostu hâli" },
+      { type: "h3", text: "Soru: Yapay zeka çağında SEO yeterli mi?" },
+      {
+        type: "p",
+        text: "Kısa yanıt: Hayır. SEO hâlâ gerekli ama tek başına yetmiyor. Kullanıcılar sorularını arama motoru yerine yapay zeka asistanlarına sorduğunda, klasik sıralama (ranking) görünürlük getirmiyor. Bu yüzden içeriğinizi hem arama motorları hem yanıt motorları için yazmanız gerekiyor.",
+      },
+      { type: "h3", text: "Sıkça sorulan sorular" },
+      {
+        type: "list",
+        items: [
+          "SEO tam olarak ne yapar? — Arama motorlarının sonuç sayfasında öne çıkmanızı sağlar. Doğru anahtar kelimelerle çalışır.",
+          "AEO dostu yazı nasıl yazılır? — Hedef kitlenizin en çok sorduğu soruyu ve net yanıtını yazının en başına koyarsınız. Yanıt 40-60 kelimeyi geçmemeli ve tek başına anlaşılabilir olmalı.",
+          "GEO neden ayrıca gerekiyor? — Hedef kitleniz Claude Chat gibi bir asistana \"dijital pazarlama eğitimi öner\" dediğinde, asistanın sizi önerebilmesi için içeriğinizin ona uygun biçimde yazılmış olması gerekir.",
+          "Üçünü birden yapmak şart mı? — Şart değil ama en güvenlisi bu. İşi şansa bırakmamak için üçünü birlikte kurgulayın.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Ne değişti: Metin soru-yanıt mimarisine çevrildi. En kritik soru en üstte, yanıtı hemen altında. Her yanıt bağlamdan koparılıp tek başına alınabilecek şekilde bağımsız yazıldı.",
+      },
+
+      { type: "h2", text: "3. Sadece GEO dostu hâli" },
+      {
+        type: "h3",
+        text: "SEO, AEO ve GEO: Üretken Arama Motorlarında Görünürlük",
+      },
+      {
+        type: "p",
+        text: "Tanım: Üretken motor optimizasyonu (GEO), içeriği yapay zeka yanıtlarında kaynak olarak gösterilme (citation) olasılığını artıracak biçimde yapılandırma pratiğidir. Klasik SEO sıralama için, GEO ise alıntılanmak için çalışır.",
+      },
+      {
+        type: "p",
+        text: "Neden önemli: Üretken yanıt motorları, sıralı sonuç listesi sunmak yerine getirilen kaynakların küçük bir bölümünü seçerek yanıt oluşturur; alıntılanmayan kaynak, sıralaması ne olursa olsun pratikte hiç görünmez. Brandlight araştırmasına göre Google'ın üst sıralarındaki bağlantılar ile yapay zekanın alıntıladığı kaynaklar arasındaki örtüşme %70'ten %20'nin altına düşmüştür.",
+      },
+      {
+        type: "p",
+        text: "Ne işe yarıyor: Princeton, Georgia Tech ve Allen Institute ortak çalışmasında dokuz farklı optimizasyon yöntemi test edildi. En iyi sonucu veren üç yöntem — kaynak gösterme, alıntı ekleme ve istatistik ekleme — temel içeriğe kıyasla %30-40 arası görünürlük artışı sağladı. Okunabilirliği artırmak gibi biçimsel iyileştirmeler bile %15-30 arası kazanç verdi. Aynı çalışmada, anahtar kelime yığma (keyword stuffing) gibi klasik SEO yöntemleri üretken motorlarda işe yaramadı.",
+      },
+      {
+        type: "p",
+        text: "Pratikte ne demek: Bir eğitim işletmesi, örneğin dijital pazarlama eğitimi satıyorsa ve hedef kitlesi Claude Chat'e \"hangi eğitimi almalıyım\" diye soruyorsa; o işletmenin içeriğinde net tanımlar, tarihli veriler, fiyat aralıkları ve dış kaynak referansları bulunmalıdır. İstatistikler, tanımlar, karşılaştırmalar, fiyatlar, tarihler ve referanslar, üretken modelin seçip atfedebileceği birimler oluşturur.",
+      },
+      {
+        type: "p",
+        text: "Sonuç: SEO artık gerekli ama yeterli değil. Üçünü birlikte kurgulayın.",
+      },
+      {
+        type: "quote",
+        text: "Ne değişti: Metin alıntılanabilir bilgi bloklarına bölündü. Sayı, tarih, kurum adı ve dış kaynak eklendi. Her paragraf tek başına kopyalanıp bir yapay zeka yanıtına konabilecek durumda.",
+      },
+
+      { type: "h2", text: "4. Karşılaştırma: yazı neden ve nasıl değişti?" },
+      {
+        type: "table",
+        headers: ["", "SEO", "AEO", "GEO"],
+        rows: [
+          ["Kime yazıyorsunuz", "Arama motoru algoritması", "Yanıt kutusu / sesli asistan", "Yapay zeka asistanı (Claude, ChatGPT)"],
+          ["Başarı ölçütü", "Sıralama (ranking)", "Öne çıkan yanıt olmak", "Kaynak gösterilmek (citation)"],
+          ["Yapı", "Başlık hiyerarşisi + anahtar kelime", "Soru → kısa yanıt → SSS", "Bağımsız, veri yüklü bloklar"],
+          ["Ton", "Tanıtıcı, akıcı", "Doğrudan, net, kısa", "Nesnel, referanslı, ansiklopedik"],
+          ["En kritik hamle", "Anahtar kelime yerleşimi", "Soruyu en başa koymak", "İstatistik + kaynak eklemek"],
+          ["En büyük hatası", "Anahtar kelime yığmak", "Yanıtı geciktirmek", "İddiayı kanıtsız bırakmak"],
+          ["Uzunluk eğilimi", "Uzun ve kapsamlı", "Kısa ve parçalı", "Yoğun ve kanıtlı"],
+        ],
+      },
+      { type: "h3", text: "Değişimin özeti" },
+      {
+        type: "list",
+        items: [
+          "Ham metin → SEO: Metnin iskeleti değişti. İçerik aynı kaldı, üzerine başlık yapısı ve anahtar kelime yerleşimi eklendi.",
+          "SEO → AEO: Metnin sırası değişti. Bilgi aynı, ama sonuç en başa alındı. SEO'da merak uyandırıp okuyucuyu aşağı çekersiniz; AEO'da hemen cevap verirsiniz.",
+          "AEO → GEO: Metnin kanıt yoğunluğu değişti. Kısa ve net olmak yetmiyor; sayı, kurum adı, tarih ve dış kaynak gerekiyor. Sinyal simetrik çalışıyor: sayfanız güvenilir kaynaklara atıf yapıyorsa, dil modelleri de sayfanızı güvenilir kaynak olarak değerlendiriyor.",
+          "Ortak nokta: Üçü birbirini dışlamıyor. 2026 ölçümlerinin en net bulgusu, klasik SEO'nun hâlâ gerekli ama tek başına yetersiz olduğu; onu temel şart (table stakes) sayıp asıl eforu GEO tarafına ayırmak gerektiği yönünde.",
+        ],
+      },
+
+      { type: "h2", text: "5. Hem SEO, hem AEO, hem GEO dostu hâli" },
+      { type: "h3", text: "SEO Yeterli mi? AEO ve GEO Farkı (2026 Rehberi)" },
+      {
+        type: "p",
+        text: "Meta açıklama: SEO, AEO ve GEO nedir, farkları neler? Yapay zeka sohbetlerinde önerilen içerik nasıl yazılır — veriye dayalı kısa rehber.",
+      },
+      {
+        type: "p",
+        text: "Soru: Yapay zeka çağında sadece SEO yapmak yeterli mi? Yanıt: Hayır. SEO hâlâ gerekli, ama artık tek başına görünürlük getirmiyor. Kullanıcılar sorularını yapay zeka asistanlarına sorduğunda, sıralamanız değil, alıntılanıp alıntılanmadığınız belirleyici oluyor. Bu yüzden içeriğinizi üç katmanlı yazmanız gerekiyor: SEO, AEO ve GEO.",
+      },
+      { type: "h3", text: "SEO nedir ve hâlâ neden gerekli?" },
+      {
+        type: "p",
+        text: "SEO (arama motoru optimizasyonu), doğru anahtar kelimelerle arama sonuçlarında öne çıkmanızı sağlar. Yapay zeka motorları da büyük ölçüde aynı dizinlerden (index) besleniyor — yani sayfanız taranabilir ve dizinlenmiş değilse, hiçbir GEO taktiği işe yaramaz. SEO'yu temel şart olarak görün.",
+      },
+      { type: "h3", text: "AEO nedir ve nasıl yazılır?" },
+      {
+        type: "p",
+        text: "AEO (yanıt motoru optimizasyonu), hedef kitlenizin en çok sorduğu soruyu ve yanıtını yazının en başına koymanızdır. Yanıt kısa, net ve tek başına anlaşılır olmalı. Kural basit: önce cevap, sonra bağlam.",
+      },
+      { type: "h3", text: "GEO nedir ve neden ayrıca gerekiyor?" },
+      {
+        type: "p",
+        text: "GEO (üretken motor optimizasyonu), yapay zeka yanıtlarında kaynak olarak gösterilme olasılığınızı artırma pratiğidir. Google'ın üst sıralarındaki bağlantılar ile yapay zekanın alıntıladığı kaynaklar arasındaki örtüşme %70'ten %20'nin altına düştü. Princeton, Georgia Tech ve Allen Institute ortak çalışmasında en iyi sonucu veren yöntemler kaynak gösterme, alıntı ekleme ve istatistik ekleme oldu; bunlar %30-40 arası görünürlük artışı sağladı.",
+      },
+      {
+        type: "p",
+        text: "Somut örnek: dijital pazarlama eğitimi satıyorsanız ve hedef kitleniz Claude Chat'e \"hangi eğitimi almalıyım\" diye soruyorsa, Claude'un sizi önerebilmesi için içeriğinizde net tanımlar, tarihli veriler ve dış kaynak referansları bulunmalıdır.",
+      },
+      { type: "h3", text: "Üçü birlikte nasıl kurgulanır?" },
+      {
+        type: "list",
+        items: [
+          "Başlık ve alt başlıklar: hedef anahtar kelimeyi taşısın (SEO)",
+          "İlk paragraf: en çok sorulan soru + 40-60 kelimelik net yanıt (AEO)",
+          "Gövde: her bölüm tek konu, doğrudan cevapla başlasın (AEO + GEO)",
+          "Kanıt: en az bir istatistik, bir tarih, bir dış kaynak (GEO)",
+          "Kapanış: SSS bölümü (AEO)",
+        ],
+      },
+      { type: "h3", text: "Sıkça sorulan sorular" },
+      {
+        type: "list",
+        items: [
+          "SEO öldü mü? — Hayır. Klasik SEO gerekli ama yetersiz — temel şart olarak korunmalı, ek efor GEO'ya ayrılmalı.",
+          "Anahtar kelime yığmak yapay zekada işe yarar mı? — Hayır. Araştırmada anahtar kelime yığma gibi klasik SEO yöntemleri üretken motorlarda başarı göstermedi.",
+          "Nereden başlamalıyım? — İlk paragrafınızı soru-yanıt formatına çevirin ve yazınıza bir istatistik + bir kaynak ekleyin. En düşük maliyetli iki hamle bunlar.",
+        ],
+      },
+
+      { type: "h2", text: "Uygulama kontrol listesi" },
+      {
+        type: "p",
+        text: "Kendi metnini yazarken bu listeyi kullanabilirsin.",
+      },
+      { type: "h3", text: "SEO katmanı" },
+      {
+        type: "list",
+        items: [
+          "Hedef anahtar kelime belirlendi",
+          "Anahtar kelime başlıkta geçiyor",
+          "Anahtar kelime ilk 100 kelimede geçiyor",
+          "Alt başlıklar H2/H3 hiyerarşisinde",
+          "Meta açıklama yazıldı (150-160 karakter)",
+        ],
+      },
+      { type: "h3", text: "AEO katmanı" },
+      {
+        type: "list",
+        items: [
+          "En çok sorulan soru belirlendi",
+          "Soru yazının en başında",
+          "Yanıt 40-60 kelime ve bağımsız anlaşılır",
+          "Her bölüm cevapla başlıyor, bağlamla devam ediyor",
+          "SSS bölümü var",
+        ],
+      },
+      { type: "h3", text: "GEO katmanı" },
+      {
+        type: "list",
+        items: [
+          "En az bir istatistik var",
+          "En az bir dış kaynak referansı var",
+          "Tarih / sayı / kurum adı geçiyor",
+          "Net tanım cümlesi var (\"X şudur:\")",
+          "Paragraflar tek başına alıntılanabilir",
+          "İddialar kanıtsız bırakılmamış",
+        ],
+      },
+
+      { type: "h2", text: "Bir dürüstlük notu (eğitmen için)" },
+      {
+        type: "p",
+        text: "AEO ve GEO ayrımı bu materyalde net çizildi, ama literatürde bu kadar net değil. 2026 başı itibarıyla akademik literatürde bu terimleri birbirinden ayıran bir uzlaşı tanımı yok; GEO, AEO, LLMO ve AI SEO çoğu zaman birbirinin yerine kullanılıyor.",
+      },
+      {
+        type: "p",
+        text: "Bu ayrımı derste pedagojik bir sadeleştirme olarak kullanmak sorun değil — üç farklı okuyucu tipini ayırt etmek öğrenmeyi kolaylaştırıyor. Ancak katılımcılara \"sektörde yerleşmiş kesin kategoriler\" gibi sunmamak gerekir. Bir cümlelik uyarı yeterli: \"Bu üçlü ayrım öğrenmeyi kolaylaştırmak için; kaynaklarda çoğu zaman iç içe geçmiş halde göreceksiniz.\"",
+      },
+      {
+        type: "p",
+        text: "Ayrıca alanın hızlı değiştiğini unutma: buradaki oranlar 2025-2026 çalışmalarına dayanıyor ve altı ayda değişebilir. Materyali her dönem başında güncellemek gerekiyor.",
+      },
+
+      { type: "h2", text: "Kaynaklar" },
+      {
+        type: "links",
+        items: [
+          {
+            label: "Aggarwal, P. ve ark. — GEO: Generative Engine Optimization (Princeton / Georgia Tech / Allen Institute)",
+            url: "https://arxiv.org/pdf/2311.09735",
+          },
+          {
+            label: "Optimizing Visibility in Generative Engines: A Critical Survey (2023–2026)",
+            url: "https://arxiv.org/html/2607.14035v1",
+          },
+          {
+            label: "What Gets Cited: Competitive GEO in AI Answer Engines (SIGIR '26)",
+            url: "https://arxiv.org/pdf/2605.25517",
+          },
+          {
+            label: "LLM Pulse — Generative Engine Optimization: The Complete Guide for 2026",
+            url: "https://llmpulse.ai/blog/geo-guide/",
+          },
+          {
+            label: "LLMrefs — GEO: The 2026 Guide to AI Search Visibility",
+            url: "https://llmrefs.com/generative-engine-optimization",
+          },
+          {
+            label: "Wikipedia — Generative engine optimization",
+            url: "https://en.wikipedia.org/wiki/Generative_engine_optimization",
+          },
+        ],
+      },
     ],
     instagramUrl: "https://www.instagram.com/p/DcmGjUVAZsj/",
   },
