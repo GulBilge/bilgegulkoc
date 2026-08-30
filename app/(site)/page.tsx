@@ -24,7 +24,7 @@ export default function HomePage() {
         <CTA
           title="Bir sonraki adımı birlikte atalım."
           href={siteConfig.instagram}
-          label="Instagram'da DM'e CLAUDE yaz"
+          label="Instagram'da DM'den Merhaba, sorum var yaz"
         />
       </Section>
     </>
