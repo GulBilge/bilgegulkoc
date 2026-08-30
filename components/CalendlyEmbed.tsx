@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 
-const CALENDLY_URL = "https://calendly.com/gul-bilge00";
+const CALENDLY_URL = "https://calendly.com/bilgegulkoc/30min";
 
 export function CalendlyEmbed({ height = 700 }: { height?: number }) {
   return (
