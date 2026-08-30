@@ -29,6 +29,7 @@ export const primaryNav: (NavLink | NavGroup)[] = [
     items: [
       { label: "Danışmanlık", href: "/danismanlik" },
       { label: "İşim İçin Yapay Zeka", href: "/isim-icin-yapay-zeka" },
+      { label: "Proje Keşfi", href: "/proje-kesfi" },
     ],
   },
   { label: "Vaka Çalışması", href: "/vaka-calismasi" },
