@@ -902,16 +902,16 @@ export const posts: Post[] = [
       {
         type: "list",
         items: [
-          "Claude.ai'de Settings (Ayarlar) → Capabilities → Skills bölümüne git.",
-          "\"Create skill\" (Skill oluştur) de.",
-          "Aşağıdaki tam promptu kopyala, SKILL.md içeriği olarak yapıştır.",
-          "Skill'e bir isim ver (ör. \"alti-sapkali-konsey\") ve kaydet.",
-          "Claude Code kullanıyorsan aynı içeriği proje veya kullanıcı skill klasörüne bir SKILL.md dosyası olarak koyman yeterli.",
+          "Önce Claude'un beceri kaydetme özelliğinin açık olduğundan emin ol: Settings → Capabilities → \"Code execution and file creation\" açık olmalı. Skills, bu açık olmadan çalışmıyor.",
+          "Aynı sayfada \"Skills\" seçeneğini de aç.",
+          "Bir sohbete altı şapkalı konsey becerisini oluşturacak promptu (aşağıdaki tam SKILL.md metnini) yapıştır.",
+          "Claude beceriyi oluşturur. Oluşan dosyayı sağ paneldeki artifact üzerinden okuyabilirsin; istersen içeriği burada güncelleyebilirsin.",
+          "\"Kaydet\" de. Beceri artık hesabına kayıtlı.",
         ],
       },
       {
         type: "p",
-        text: "Kurulumdan sonra Claude'a \"şu kararı test et\", \"altı şapka\" ya da \"ikisi arasında kaldım, hangisini seçeceğimi bilmiyorum\" gibi bir şey söylediğinde skill kendiliğinden devreye giriyor. Adını ezberlemene gerek yok.",
+        text: "Sonrasında ayrı bir sohbette karar veremediğin bir konuyu yazdığında Claude, altı şapkalı konsey becerisini kullanması gerektiğini kendisi anlıyor ve devreye sokuyor. Adını söylemene gerek yok.",
       },
       { type: "h2", text: "Üç aşamalı akış" },
       { type: "h3", text: "Aşama 1 — Bağımsız görüşler" },
