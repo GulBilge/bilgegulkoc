@@ -1,4 +1,5 @@
 import type { ContentBlock } from "@/lib/yazilar";
+import { CopyPromptBlock } from "@/components/CopyPromptBlock";
 
 export function PostBlocks({ blocks }: { blocks: ContentBlock[] }) {
   return (
@@ -105,6 +106,8 @@ export function PostBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 ))}
               </ul>
             );
+          case "prompt":
+            return <CopyPromptBlock key={i} text={block.text} />;
           default:
             return null;
         }

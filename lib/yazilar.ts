@@ -16,7 +16,8 @@ export type ContentBlock =
   | { type: "quote"; text: string }
   | { type: "list"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] }
-  | { type: "links"; items: { label: string; url: string }[] };
+  | { type: "links"; items: { label: string; url: string }[] }
+  | { type: "prompt"; text: string };
 
 export type Post = {
   slug: string;
@@ -870,6 +871,235 @@ export const posts: Post[] = [
       },
     ],
     instagramUrl: "https://www.instagram.com/p/DcmGjUVAZsj/",
+  },
+  {
+    slug: "6-sapkali-konsey-claude-skill",
+    title: "Evden Çalışırken Karar Veremiyorsan: Claude'da 6 Şapkalı Konsey Kurdum",
+    excerpt:
+      "de Bono'nun Altı Şapkalı Düşünme tekniğini Claude Skill'e çevirdim. Kuruluşu, üç aşamalı akışı, dürüst sınırları ve tam promptu bu yazıda.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-08-31",
+    blocks: [
+      {
+        type: "p",
+        text: "Evden çalışan bir anne-girişimsen büyük ihtimalle şu hâli biliyorsun: bir karar var önünde, iki seçenek var, ikisini de düşünmekten kafan dağılıyor ve elinde ne zamanın ne de yanına danışacak birinin var. Ben bu boşluk için Claude içinde bir 'karar konseyi' kurdum. Bu yazı, o konseyin ne olduğunu, nasıl kurulduğunu ve arkasındaki tam promptu içeriyor.",
+      },
+      { type: "h2", text: "Bu skill ne yapıyor?" },
+      {
+        type: "p",
+        text: "Edward de Bono'nun 1985'te tanımladığı Altı Şapkalı Düşünme tekniğini aldım, Claude'da çalışan bir Skill'e (beceriye) çevirdim. Bir kararı — \"bütçemi reklama mı içeriğe mi harcayayım\" gibi net, seçenekli bir kararı — altı ayrı bakış açısından inceletiyor: beyaz şapka veriye bakar, kırmızı şapka sezgiye, siyah şapka riske, sarı şapka faydaya, yeşil şapka masadaki iki seçeneğin dışına, mavi şapka da sonunda toparlar.",
+      },
+      {
+        type: "p",
+        text: "Amaç senin yerine karar vermek değil. Amaç, tek başına düşünürken göremeyeceğin açıları görünür kılmak — sonra kararı yine sana bırakmak.",
+      },
+      { type: "h2", text: "Neden buna ihtiyaç duydum" },
+      {
+        type: "p",
+        text: "Evden çalışırken en çok eksik olan şey zaman değil, çoğu zaman netlik. Kararı düşünecek 40 dakikan olsa bile, o 40 dakikada tek bir bakış açısından bakıp duruyorsun — genelde ya korkudan (\"ya olmazsa\") ya da alışkanlıktan. Bu skill, o tek açıyı zorla altıya bölüyor. Kırmızı şapka sezgini yazmana izin veriyor, siyah şapka nazik olmak zorunda değil, yeşil şapka hiç düşünmediğin bir seçeneği masaya koyuyor.",
+      },
+      { type: "h2", text: "Nasıl kurulur" },
+      {
+        type: "list",
+        items: [
+          "Claude.ai'de Settings (Ayarlar) → Capabilities → Skills bölümüne git.",
+          "\"Create skill\" (Skill oluştur) de.",
+          "Aşağıdaki tam promptu kopyala, SKILL.md içeriği olarak yapıştır.",
+          "Skill'e bir isim ver (ör. \"alti-sapkali-konsey\") ve kaydet.",
+          "Claude Code kullanıyorsan aynı içeriği proje veya kullanıcı skill klasörüne bir SKILL.md dosyası olarak koyman yeterli.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Kurulumdan sonra Claude'a \"şu kararı test et\", \"altı şapka\" ya da \"ikisi arasında kaldım, hangisini seçeceğimi bilmiyorum\" gibi bir şey söylediğinde skill kendiliğinden devreye giriyor. Adını ezberlemene gerek yok.",
+      },
+      { type: "h2", text: "Üç aşamalı akış" },
+      { type: "h3", text: "Aşama 1 — Bağımsız görüşler" },
+      {
+        type: "p",
+        text: "Her şapka sırayla ve diğerlerini görmeden yazar, en fazla 5 madde. Beyaz şapka her zaman ilk sıradadır çünkü veri olmadan diğer şapkalar havada konuşur. Bilinmeyen bir veri varsa uydurulmaz, \"bilinmiyor\" diye yazılır ve nasıl öğrenilebileceği eklenir — skill'in en sık bozulduğu nokta tam olarak burası.",
+      },
+      { type: "h3", text: "Aşama 2 — Çapraz itiraz" },
+      {
+        type: "p",
+        text: "Şimdi her şapka diğerlerinin yazdığını görüyor ve tam olarak bir itiraz yazıyor: hangi maddeye katılmıyor, neden. Bu aşama konseyin kendi kendini onaylayan bir yankı odasına dönmesini engelleyen tek mekanizma.",
+      },
+      { type: "h3", text: "Aşama 3 — Mavi şapka sentezi" },
+      {
+        type: "p",
+        text: "Mavi şapka kapatır ama görevi uzlaşma üretmek değildir. Gerçek anlaşmazlığın nerede olduğunu örtmeden yazar, kararın hangi tek bilgiye bağlı olduğunu söyler, kararı sana bırakır ve kararın kendisi değil, kararı vermek için gereken bir sonraki somut adımı verir.",
+      },
+      { type: "h2", text: "Yöntemin sınırı — buna dürüst olmak gerek" },
+      {
+        type: "quote",
+        text: "de Bono'nun orijinal tekniği bir paralel düşünme yöntemi: grupta herkes aynı anda aynı şapkayı takar, amaç tartışmayı önlemektir. Bu skill yöntemi uyarlar, birebir uygulamaz — burada her şapka ayrı bir role verilir ve roller kasten çarpıştırılır. Ayrıca tek bir model altı rolü de oynuyor; bu altı bağımsız uzman görüşü değil, yapılandırılmış bir bakış açısı çeşitliliği. \"Konsey daha doğru karar verir\" gibi bir iddia kanıtlanmış değil.",
+      },
+      {
+        type: "p",
+        text: "Skill'i çıktının sonunda bu farkı belirtecek şekilde kurdum çünkü yöntemi bilen ya da çıktıyı bir yerde paylaşacak biri için bunu gizlemek yanıltıcı olurdu. Ayrıca sağlık, hukuk, vergi ve yatırım kararlarında konsey çalıştırılabilir ama sonunda ilgili uzmana yönlendirir — teşhis koymaz, hukuki ya da finansal tavsiye vermez.",
+      },
+      { type: "h2", text: "Tam prompt — SKILL.md" },
+      {
+        type: "p",
+        text: "Aşağıdaki metnin tamamı, benim gerçekten kullandığım skill dosyası. Kopyala, Claude'a Skill olarak ekle.",
+      },
+      {
+        type: "prompt",
+        text: `---
+name: alti-sapkali-konsey
+description: Bir karar veya fikri, Edward de Bono'nun Altı Şapkalı Düşünme tekniğine dayanan üç aşamalı bir yapay zeka konseyinde test eder. Beyaz, kırmızı, siyah, sarı, yeşil ve mavi şapkalar bağımsız görüş yazar, birbirine itiraz eder, mavi şapka sentezler. Kullanıcı "şu fikrimi test et", "altı şapka", "konsey", "bu kararı nasıl vereceğimi bilmiyorum", "artılarını eksilerini göster", "ikisi arasında kaldım", "bunu bana eleştir", "karar veremiyorum" gibi bir şey söylediğinde bu beceriyi kullan. Kullanıcı "altı şapka" veya "konsey" kelimelerini kullanmasa bile, önünde iki veya daha fazla seçenek olan ve hangisini seçeceğini soran her durumda bu beceriyi kullanmayı ciddi biçimde değerlendir. Karar zaten verilmişse ve kullanıcı sadece uygulama soruyorsa kullanma.
+---
+
+# Altı Şapkalı Konsey
+
+Bir kararı, altı ayrı bakış açısını birbirine çarpıştırarak inceler. Amaç kullanıcı yerine karar vermek değil; kullanıcının kendi başına göremeyeceği açıları görünür kılmaktır.
+
+## Yöntemin sınırı — bunu gizleme
+
+Edward de Bono'nun orijinal Altı Şapkalı Düşünme tekniği (1985) bir paralel düşünme yöntemidir. Grupta herkes aynı anda aynı şapkayı takar; amacı tartışmayı önlemektir.
+
+Bu beceri yöntemi uyarlar, birebir uygulamaz. Burada her şapka ayrı bir role verilir ve roller kasten çarpıştırılır.
+
+Kullanıcı yöntemi bilen biriyse veya çıktıyı bir yerde paylaşacağını söylüyorsa, bu farkı çıktının sonunda bir cümleyle belirt.
+
+Ayrıca: tek bir model altı rolü de oynuyor. Bu, altı bağımsız uzman görüşü değildir. Elde edilen şey yapılandırılmış bakış açısı çeşitliliğidir. "Konsey daha doğru karar verir" gibi bir iddiada bulunma — bu kanıtlanmış değil.
+
+## Başlamadan önce
+
+Kararı netleştirmeden konseyi kurma. Şu üçü elde yoksa kullanıcıya sor, tahmin etme:
+
+1. Karar nedir? Tek cümlede, seçenekleriyle. "Pazarlama yapmalı mıyım" karar değil; "bütçemi reklamla mı içerikle mi harcayayım" karardır.
+2. Bağlayıcı kısıt ne? Zaman, para, enerji, ekip, takvim. En az bir tane olmalı.
+3. Ne zaman kararlaştırılacak? Tarih varsa siyah ve mavi şapka bunu kullanır.
+
+Eğer kullanıcı kararını zaten vermiş ve sadece onay arıyorsa bunu nazikçe söyle. Konsey, verilmiş kararı doğrulamak için kullanılırsa işe yaramaz.
+
+## Aşama 1 — Bağımsız görüşler
+
+Her şapka sırayla ve diğerlerini görmeden yazar. Beyaz şapka her zaman ilk sırada; veri olmadan diğer şapkalar havada konuşur.
+
+Her şapka en fazla 5 madde yazar. Uzunluk değil keskinlik aranır.
+
+Beyaz — Veri
+Elde ne var, ne yok. Sayı, tarih, geçmiş sonuç, gözlem. Yorum yok, tavsiye yok.
+Bilinmeyeni uydurma. Bilinmeyeni "bilinmiyor" diye yaz ve nasıl öğrenilebileceğini ekle. Bu becerinin en sık bozulduğu yer burasıdır: eksik veriyi makul görünen bir tahminle doldurmak, konseyin geri kalanını çürütür.
+
+Kırmızı — Sezgi
+Gerekçe istenmez, istenmemeli. "İçime sinmiyor", "bu beni yoruyor", "bunu düşününce rahatlıyorum" geçerli girdilerdir.
+Kullanıcı duygusunu ifade ettiyse onu kullan. Etmediyse, ifade ettiği şeylerden çıkarım yapmaya çalış ve çıkarım olduğunu belirt.
+
+Siyah — Risk
+Ne ters gidebilir. Hangi varsayım çürük. En kötü senaryo ne.
+Bu şapka nazik olmakla yükümlü değil. Yumuşatılmış bir siyah şapka konseyin tamamını değersizleştirir.
+Ama korku üretme, risk göster. Genel felaket cümleleri ("başarısız olabilirsin") yasak; belirli ve takip edilebilir riskler yaz ("üçüncü haftada katılım düşerse geri kalan üç hafta boşa gider").
+
+Sarı — Fayda
+Bu işe yararsa neden yarar. Hangi mekanizma çalışır.
+İyimserlik değil, gerekçe. "Harika olur" değil, "şu yüzden işe yarar".
+
+Yeşil — Alternatif
+Masadaki iki seçeneğin dışında ne var. Hibrit, erteleme, küçültme, sıralamayı değiştirme, başkasına devretme.
+En az bir tane, kullanıcının hiç düşünmediği seçenek üret.
+
+Mavi — Süreç (bu aşamada sadece çerçeve)
+Bu karar aslında hangi soruya bağlı. Hangi kısıt gerçekten bağlayıcı, hangisi sadece alışkanlık veya korku.
+Henüz sentez yapma.
+
+## Aşama 2 — Çapraz itiraz
+
+Şimdi her şapka diğerlerinin yazdıklarını görür.
+
+Her şapka tam olarak bir itiraz yazar: başka bir şapkanın hangi maddesine katılmıyor ve neden.
+
+Kural: itiraz somut bir maddeye olmalı. "Siyah şapka fazla karamsar" itiraz değil. "Siyah şapkanın üçüncü maddesi, kullanıcının daha önce benzer bir şeyi yaptığını göz ardı ediyor" itirazdır.
+
+Bir şapkanın gerçekten itirazı yoksa "itirazım yok" yazması serbesttir. Zorlama itiraz üretme.
+
+Bu aşama, konseyin yankı odasına dönmesini engelleyen tek mekanizmadır. Atlama.
+
+## Aşama 3 — Mavi şapka sentezi
+
+Mavi şapka kapatır. Görevi uzlaşma üretmek değil.
+
+- Nerede gerçek anlaşmazlık var, açıkça yaz. Örtme.
+- Kararın hangi tek bilgiye bağlı olduğunu söyle. Çoğu karar tek bir bilinmeyene bağlıdır.
+- Kullanıcıya karar verdirme. Kararı netleştir, sonra bırak.
+- Bir sonraki somut adımı yaz — kararın kendisini değil, kararı vermek için gereken adımı.
+
+## Çıktı biçimi
+
+Bu şablonu kullan:
+
+## Karar
+[tek cümle, seçenekleriyle]
+
+## Kısıt
+[bağlayıcı olan]
+
+---
+
+### Beyaz — Veri
+### Kırmızı — Sezgi
+### Siyah — Risk
+### Sarı — Fayda
+### Yeşil — Alternatif
+### Mavi — Çerçeve
+
+---
+
+## Çapraz itirazlar
+[şapka → hangi maddeye → neden]
+
+---
+
+## Mavi şapka sentezi
+
+Gerçek anlaşmazlık:
+Karar şuna bağlı:
+Duyulması zor olan:
+Bir sonraki adım:
+
+"Duyulması zor olan" bölümü, siyah veya kırmızı şapkanın söylediği, kullanıcının muhtemelen duymak istemediği tek cümledir. Bu bölümü yumuşatma. Ama tek cümle olsun — dövmeye dönüşmesin.
+
+## Dil ve sınırlar
+
+- Türkçe yaz. İngilizce terim kullanırsan parantez içinde Türkçesini ver.
+- Samimi ve resmi arası, sakin bir ton. Motivasyon dili yok.
+- Uydurma sayı, uydurma araştırma, uydurma referans yok. Kaynaksız iddiayı ya kaynakla ya da yazma.
+- Suçlayıcı ve utandırıcı dil yok. Siyah şapka sert olabilir, aşağılayıcı olamaz.
+- "Kesin sonuç", "mutlaka yap", "bu kesin işe yarar" gibi garanti cümleleri yok.
+- Sağlık, hukuk, vergi ve yatırım kararlarında konseyi çalıştırabilirsin ama sonunda ilgili uzmana yönlendir. Teşhis koyma, hukuki veya finansal tavsiye verme.
+- Kullanıcı çok kişisel veya kriz içeren bir karar getirdiyse (ilişki, sağlık, güvenlik) konseyi mekanik biçimde çalıştırma. Önce insanı dinle.
+
+## Kısa mod
+
+Kullanıcı "kısa tut" veya "hızlı bak" derse: her şapka tek madde, çapraz itiraz aşaması atlanır, mavi şapka üç cümle. Bunun dışında tam akış çalışır.`,
+      },
+      { type: "h2", text: "Nasıl kullanılır — örnek" },
+      {
+        type: "p",
+        text: "Skill kurulduktan sonra Claude'a şöyle bir şey yazman yeterli: \"Bütçemi reklama mı içerik üretimine mi harcayayım, bilemiyorum, altı şapka ile bak.\" Claude önce kararı ve kısıtı netleştirmek için sana soru sorar — atlamaz. Sonra altı şapka sırayla yazar, birbirine itiraz eder, mavi şapka kapatır. Sonunda kararı sana bırakır ama hangi tek bilgiye bağlı olduğunu söyler.",
+      },
+      {
+        type: "p",
+        text: "Bu beceriyi Claude'una eklemek istersen yukarıdaki promptu doğrudan kopyalayabilirsin. İstersen Instagram'daki gönderiye yorumla, DM'den de gönderirim.",
+      },
+      { type: "h2", text: "Kaynaklar" },
+      {
+        type: "links",
+        items: [
+          {
+            label: "Edward de Bono — Six Thinking Hats (1985)",
+            url: "https://en.wikipedia.org/wiki/Six_Thinking_Hats",
+          },
+          {
+            label: "Anthropic — Claude Skills Documentation",
+            url: "https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview",
+          },
+        ],
+      },
+    ],
+    instagramUrl: "https://www.instagram.com/reel/DctoQf0hdER/",
   },
 ];
 
