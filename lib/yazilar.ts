@@ -1101,6 +1101,187 @@ Kullanıcı "kısa tut" veya "hızlı bak" derse: her şapka tek madde, çapraz 
     ],
     instagramUrl: "https://www.instagram.com/reel/DctoQf0hdER/",
   },
+  {
+    slug: "bilgi-kesim-tarihi",
+    title: "Yapay zekân 2023'ün algoritmasını biliyor olabilir",
+    excerpt:
+      "Yapay zekânın bilgi kesim tarihi Instagram erişimini nasıl etkiliyor ve her içerikte kullandığım güncel prompt.",
+    category: "ai-otomasyon",
+    date: "2026-09-03",
+    blocks: [
+      {
+        type: "p",
+        text: "Yapay zekâ kullanıyorsun ama yazdırdığın içerikler eskisi gibi erişim almıyor mu? Sorun yapay zekâda değil, ona nasıl sorduğunda. Atlanan en kritik adım: bilgi kesim tarihi.",
+      },
+      {
+        type: "h2",
+        text: "Kısaca: bilgi kesim tarihi nedir?",
+      },
+      {
+        type: "p",
+        text: "Bilgi kesim tarihi, bir yapay zekâ modelinin eğitim verisinin bittiği tarihtir. O tarihten sonrası için modelin web'de arama özelliği yoksa ya uydurur ya da eski bilgisiyle cevap verir. Instagram algoritması yılda birkaç kez değiştiği için, eski bilgiyle yazılmış bir caption bugünün kurallarına göre yanlış optimize edilmiş demektir.",
+      },
+      {
+        type: "h2",
+        text: "Önce şunu kendin dene",
+      },
+      {
+        type: "p",
+        text: "Kullandığın modele tek bir soru sor:",
+      },
+      {
+        type: "quote",
+        text: "Senin bilgi kesim tarihin nedir?",
+      },
+      {
+        type: "p",
+        text: "Yapay zekâlar bu konuda yalan söylemez. Uydurabilirler ama bunu saklamazlar — sorduğunda tarihini söyler. Benim aldığım cevaplar:",
+      },
+      {
+        type: "table",
+        headers: ["Model", "Verdiği cevap"],
+        rows: [
+          ["Claude", "Güvenilir bilgi kesim tarihim Ocak 2026 sonu"],
+          ["Meta AI", "Bilgi kesim tarihim 4 Ocak 2026"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Modeller arasında fark var ve bu fark zamanla açılıyor. Bu yüzden tarihi ezberleme, her yeni modelde tekrar sor.",
+      },
+      {
+        type: "h2",
+        text: "Bu neden erişimini etkiliyor?",
+      },
+      {
+        type: "p",
+        text: "Diyelim modelin bilgisi 2024'te bitiyor ve web'de arama yapamıyor. Sen ona “Instagram için caption yaz” diyorsun. O da elindeki en son bilgiyle yazıyor: 2024'ün hashtag alışkanlıkları, 2024'ün etkileşim tavsiyeleri, 2024'ün sıralama sinyalleri.",
+      },
+      {
+        type: "p",
+        text: "Sonuç teknik olarak doğru bir metin ama bugünün algoritmasına göre yanlış optimize edilmiş. Sen de erişimin düştüğünü görüp yapay zekâyı suçluyorsun. Oysa sorun araçta değil, ona verdiğin talimatta.",
+      },
+      {
+        type: "h2",
+        text: "Çözüm: promptun kendisi güncel olsun",
+      },
+      {
+        type: "p",
+        text: "Ben her Instagram içeriğinde şu promptla başlıyorum. İçinde üç şey var: modele ne zaman aramaya gitmesi gerektiğini söylüyor, hangi kaynaklara bakacağını veriyor ve neyi yazmayacağını yasaklıyor.",
+      },
+      {
+        type: "prompt",
+        text: "Sen 2026 Instagram algoritma uzmanısın.\n\nBilgi kesim tarihin eski olabilir, o yüzden önce web'de ara: creators.instagram.com ve @mosseri'nin son 3 ayda paylaştığı ranking faktörleri.\n\nAşağıdaki kurallara göre caption yaz:\n\n1. Ana hedef: sends per reach. Bu metni kimin kime DM atacağını düşünerek yaz.\n2. İlk 2 saniye kancası: İlk cümle durdurucu olmalı, soru veya net vaat içermeli.\n3. Yasaklar: \"Yorum yap\", \"Kaydetmeyi unutma\" gibi engagement bait YAZMA. Hashtag doldurma YAPMA (max 3).\n4. Dil: Ham, insan, AI cilası yok.\n\nBunu hafızana kaydet. Bundan sonra tüm Instagram içeriklerimde bu kural setini kullan.",
+      },
+      {
+        type: "h2",
+        text: "Promptun içinde ne var?",
+      },
+      {
+        type: "p",
+        text: "Körü körüne yapıştırmanı istemem. Ne yaptığını bilirsen kendi işine göre değiştirebilirsin.",
+      },
+      {
+        type: "h3",
+        text: "1. Modele kendi sınırını hatırlatma",
+      },
+      {
+        type: "p",
+        text: "“Bilgi kesim tarihin eski olabilir, o yüzden önce web'de ara” cümlesi bir tarih dayatmıyor, şüpheyi kuruyor. Modelin hangi tarihte kesildiğini bilmek zorunda değilsin; ona bilgisinin eski olabileceğini söylemek aramaya gitmesi için yeterli. Bu satır olmadan model çoğu zaman hiç aramaz, çünkü zaten bildiğini sanır.",
+      },
+      {
+        type: "p",
+        text: "Aynı cümle nereye bakacağını da söylüyor: creators.instagram.com ve @mosseri. İkisi de birincil kaynak, yani Instagram'ın kendi ağzından. Adres vermezsen model rastgele blog yazılarını kaynak sayar.",
+      },
+      {
+        type: "h3",
+        text: "2. Tek bir hedef metrik",
+      },
+      {
+        type: "p",
+        text: "Promptun en değerli satırı bu: sends per reach. Yani içeriğinin kaç kişiye ulaştığına değil, ulaştığı kişilerin kaçının onu birine gönderdiğine bakıyor.",
+      },
+      {
+        type: "p",
+        text: "Devamındaki cümle işi somutlaştırıyor: “Bu metni kimin kime DM atacağını düşünerek yaz.” Bu, yapay zekâya soyut bir metrik yerine gerçek bir sahne veriyor: kim, kime, neden gönderiyor. Modelin çıktısını en çok değiştiren satır bu.",
+      },
+      {
+        type: "h3",
+        text: "3. İlk iki saniye",
+      },
+      {
+        type: "p",
+        text: "İzleyici kalıp kalmayacağına ilk saniyelerde karar veriyor. “Soru veya net vaat” demek, modele işe yarayan iki kalıp veriyor. Yoksa “Merhabalar, bugün sizlerle…” diye başlayan bir metin yazıyor.",
+      },
+      {
+        type: "h3",
+        text: "4. Yasaklar — asıl fark burada",
+      },
+      {
+        type: "p",
+        text: "“Yorum yap”, “Kaydetmeyi unutma” gibi kalıplar engagement bait sayılıyor. Yapay zekâ bunları çok seviyor çünkü eski içeriklerde bolca görmüş; yasaklamazsan her caption'ın sonuna yapıştırır. Hashtag sınırı da aynı sebeple: model hashtag doldurmayı iyi pratik sanır.",
+      },
+      {
+        type: "h3",
+        text: "5. Ton",
+      },
+      {
+        type: "p",
+        text: "“Ham, insan, AI cilası yok.” Kısa ama etkili. Yapay zekânın varsayılan tonu fazla parlak, fazla dengeli, fazla pazarlama kokan bir şey. Bu satır olmadan çıktı senin sesin gibi durmaz.",
+      },
+      {
+        type: "h3",
+        text: "6. Hafızaya kaydettirme",
+      },
+      {
+        type: "p",
+        text: "Son satır işi bir kere yapıp bitirmeni sağlıyor. Model kural setini hatırladığı için her yeni sohbette baştan yapıştırman gerekmiyor.",
+      },
+      {
+        type: "h2",
+        text: "Nasıl kullanacaksın?",
+      },
+      {
+        type: "list",
+        items: [
+          "Kullandığın modele kesim tarihini sor. Promptu kullanmak için şart değil ama modelinin ne kadar geride olduğunu bilmek işine yarar.",
+          "Promptu yeni bir sohbete yapıştır. Henüz içerik isteme; önce aramaya gidip kural setini kurmasını bekle.",
+          "“Hafızana kaydet” dediğini teyit et. Söylemezse tekrar iste; bu adım atlanırsa her sohbette baştan başlarsın.",
+          "Şimdi içeriğini iste. Videonun konusunu ve kime seslendiğini yaz.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Küçük bir uyarı: Instagram sıralama sinyallerini değiştirdiğinde bu kurallar da eskir. Birkaç ayda bir modele “bu kural seti hâlâ geçerli mi, kaynaklardan kontrol et” demeyi alışkanlık hâline getir. Kendi yazdığın promptun da bir kesim tarihi var.",
+      },
+      {
+        type: "h2",
+        text: "Bu arada: bu videoyu da yapay zekâyla editledim",
+      },
+      {
+        type: "p",
+        text: "Prompt yazdırmakla sınırlı kalmadım. Bu videonun kurgusunu, altyazısını ve kapağını da yapay zekâyla yaptım. Beklediğimden farklı bir şey çıktı ortaya: iş “kes yapıştır” değil, “ölç ve kanıtla” oldu.",
+      },
+      {
+        type: "list",
+        items: [
+          "Kendi eski editimi çözümledi ve tarzımı ölçerek çıkardı: videoyu 1.30 kat hızlandırdığımı, ses perdesini koruduğumu, hangi cümleyi kestiğimi tek tek buldu. Ben söylemedim.",
+          "Altyazının zıpladığını söyledim, sebebini buldu: 38 altyazı satırı zaman olarak çakışıyordu. Tasarım tercihi değil, zamanlama hatasıymış.",
+          "Sesimin boğuk çıkmasının sebebini ölçtü: yaka mikrofonum başörtümün altında kaldığı için tizler sönüyormuş. Sonra kaybolan frekansları geri getirdi.",
+          "11 altyazı grubunun bir saniyeden kısa süre ekranda kaldığını fark etti; biri sadece 0.22 saniye. İzlerken hissediyordum ama nedenini bilmiyordum.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Yapamadığı bir şey de oldu, onu da yazayım: kamera sarsıntısını yazılımla düzeltmeyi denedik, olmadı. Ölçüm iyileşme değil kötüleşme gösterdi. “Bu editte çözülmez, çekimde çözülür” dedi ve ısrar etmedi. Bence en değerli kısmı buydu.",
+      },
+      {
+        type: "p",
+        text: "Sonunda elimde tekrar kullanılabilir bir sistem kaldı: bir sonraki videoda dosyayı verip birkaç soruya cevap vermem yetiyor. Kendi içerik akışını böyle kurmak istiyorsan Instagram'dan yazabilirsin.",
+      },
+    ],
+    instagramUrl: "https://www.instagram.com/reel/Dcy24dzAerp/",
+  },
 ];
 
 export function getCategory(slug: string): Category | undefined {
