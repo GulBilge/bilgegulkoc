@@ -1447,7 +1447,7 @@ Kullanıcı "kısa tut" veya "hızlı bak" derse: her şapka tek madde, çapraz 
         text: "Bu kitapçığı kendi işin için üretirsen bana da göster, nasıl çıktığını merak ediyorum. Atölye veren bir arkadaşın varsa ona da gönder.",
       },
     ],
-    instagramUrl: "",
+    instagramUrl: "https://www.instagram.com/p/Dc38ZD8BIkS/",
   },
 ];
 
