@@ -77,10 +77,12 @@ export default async function YaziDetayPage({
           </div>
         )}
 
-        <div className="flex flex-col gap-3">
-          <p className="text-sm text-stone-500">Bu yazı önce Instagram&apos;da paylaşıldı:</p>
-          <InstagramEmbed url={post.instagramUrl} />
-        </div>
+        {post.instagramUrl ? (
+          <div className="flex flex-col gap-3">
+            <p className="text-sm text-stone-500">Bu yazı önce Instagram&apos;da paylaşıldı:</p>
+            <InstagramEmbed url={post.instagramUrl} />
+          </div>
+        ) : null}
       </article>
     </Section>
   );

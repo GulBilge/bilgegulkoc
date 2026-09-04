@@ -1282,6 +1282,173 @@ Kullanıcı "kısa tut" veya "hızlı bak" derse: her şapka tek madde, çapraz 
     ],
     instagramUrl: "https://www.instagram.com/reel/Dcy24dzAerp/",
   },
+  {
+    slug: "atolyene-dosya-bos-kutu-calismasi",
+    title: "Atölye veriyorsun ama insanlara verecek tek bir dosyan yok",
+    excerpt:
+      "Claude'a işini bir kere anlat, atölyende dağıtacağın baskıya hazır kitapçığı o çıkarsın. Prompt yazının içinde.",
+    category: "kadin-uzmanlar-icin-sistemler",
+    date: "2026-09-04",
+    series: "atolye-dosyasi",
+    seriesLabel: "Atölyene Dosya Serisi — Bölüm 1",
+    blocks: [
+      {
+        type: "p",
+        text: "Atölye veriyorsun, ders anlatıyorsun, birebir görüşme yapıyorsun. Anlattığın şey iyi. Ama insanların eline verecek tek bir dosyan yok.",
+      },
+      {
+        type: "p",
+        text: "Sen odadan çıktığın anda anlattığın her şey uçuyor. Geriye birkaç not ve “çok güzeldi” mesajı kalıyor. İnsan göremediği şeye güvenmiyor; elinde tutamadığı şeyi de hatırlamıyor.",
+      },
+      {
+        type: "h2",
+        text: "Neden özet değil de doldurulacak bir kitapçık?",
+      },
+      {
+        type: "p",
+        text: "Özet gönderirsen okunur ve kapanır. Doldurulacak bir kitapçık gönderirsen katılımcı onun üzerinde çalışır — ve çalıştığı şey senin yöntemin olur. Fark burada: biri seni anlatıyor, diğeri katılımcıya kendi cevabını yazdırıyor.",
+      },
+      {
+        type: "h2",
+        text: "Ne üretiyoruz?",
+      },
+      {
+        type: "p",
+        text: "İki sayfalık, baskıya hazır, doldurulabilir bir kitapçık. Toplam 12 numaralı kutu var ve kurgusu şöyle:",
+      },
+      {
+        type: "list",
+        items: [
+          "Sayfa 1 — “Önce sen anlat”: 6 kutu. Kime, ne konuda, hangi yolla yardım ettiğini; danışanının sana gelirken kurduğu ilk cümleleri; seni benzerlerinden ayıran somut farkı; asla yapmadığın şeyi; anlatırkenki halini ve kendi sözlüğünü çıkarır.",
+          "Sayfa 2 — “Şimdi kutuya yaz”: 6 kutu. Gerçek bir işi, sonucun nerede kullanılacağını, iyi cevabın testini ve kötü cevabın işaretini alır.",
+          "Sayfa 2'nin sonunda bir montaj alanı var: 1. sayfadaki kutulara numarayla atıf yapıyor. Katılımcı kendi cevaplarını birleştirince ortaya kendi istemi çıkıyor.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Bu kitapçığın asıl numarası",
+      },
+      {
+        type: "p",
+        text: "Hiçbir yerde hazır cümle ya da örnek cevap yok. Sadece soru ve boşluk. Çünkü örnek verirsen herkes örneği kopyalıyor ve elinde yine genel bir metin kalıyor.",
+      },
+      {
+        type: "p",
+        text: "İpuçları da yönlendirici değil, daraltıcı. “Daha kaliteli yazma, somut bir şey yaz: yöntem, sıra, kural, alışkanlık” gibi. Ne yazacağını söylemiyor, ne yazmayacağını söylüyor.",
+      },
+      {
+        type: "p",
+        text: "Bir de kapanış mekanizması var: son kutu, “cevap yine genel geldi” durumunu araca değil, katılımcının eksik bıraktığı kutuya bağlıyor. Bu kutu olmadığında insanlar “demek ki bu bana uygun değilmiş” deyip bırakıyor. Kitapçığın en önemli parçası bence bu.",
+      },
+      {
+        type: "h2",
+        text: "Prompt",
+      },
+      {
+        type: "p",
+        text: "Aşağıdaki promptu yeni bir sohbete yapıştır. En alttaki köşeli parantezi kendi işinle doldurmayı unutma — orası boş kalırsa çıktı da genel çıkar.",
+      },
+      {
+        type: "prompt",
+        text: "Sen, alanında uzman birinin kendi yöntemini ve sesini yazıya dökmesine yardım eden bir çalışma kitabı tasarımcısısın.\n\nGÖREV\nAtölyede, derste ya da birebir görüşmede dağıtılabilecek, baskıya hazır, iki sayfalık, doldurulabilir bir kitapçık üret. Dosyayı PDF olarak oluştur.\n\nAMAÇ\nKatılımcı kitapçığı doldurduğunda elinde kendi işini anlatan bir metin olsun. Bu metni yapay zekâya verdiğinde aldığı cevaplar genel değil, ona ait olsun.\n\nYAPI\nSayfa 1 — “Önce sen anlat”: 6 numaralı kutu. Katılımcının işini, sesini ve sınırlarını çıkarır.\nSayfa 2 — “Şimdi kutuya yaz”: 6 numaralı kutu. Gerçek bir işi, sonucun nerede kullanılacağını, iyi cevabın testini ve kötü cevabın işaretini alır. Ardından 1. sayfadaki kutulara NUMARAYLA atıf yapan bir montaj alanı gelsin; katılımcı kendi cevaplarını birleştirerek kendi istemini kursun. En sonda bir kontrol kutusu olsun.\n\nKURALLAR\n1. Hiçbir yerde hazır cümle, örnek cevap ya da doldurulmuş şablon OLMASIN. Yalnızca soru ve boşluk.\n2. Her sorunun altına tek satırlık bir ipucu koy. İpucu yönlendirici değil DARALTICI olsun; ne yazılmayacağını söylesin. Biçim örneği: “Daha kaliteli yazma. Somut bir şey yaz: yöntem, sıra, kural, alışkanlık.”\n3. Sorular kısa ve konuşma dilinde olsun. Jargon kullanma.\n4. Son kutu bir kapanış mekanizması olsun: “Cevap yine genel geldiyse” durumunu araca değil, katılımcının eksik bıraktığı kutuya bağlasın.\n5. Boşluklar elle doldurulabilecek kadar geniş olsun. Satır aralıklarını buna göre ayarla.\n6. Her sayfanın üstünde küçük bir başlık şeridi ve sayfa numarası bulunsun.\n\nBENİM İŞİM\n[Kime, ne konuda, hangi yolla yardım ediyorsun? Buraya kendi cümlenle yaz.]\n\nÖnce yapıyı madde madde göster, onayımı al, sonra dosyayı üret.",
+      },
+      {
+        type: "h2",
+        text: "Promptun içinde ne var?",
+      },
+      {
+        type: "p",
+        text: "Körü körüne yapıştırmanı istemem. Ne yaptığını bilirsen kendi işine göre değiştirebilirsin.",
+      },
+      {
+        type: "h3",
+        text: "1. Rol “uzman” değil, “tasarımcı”",
+      },
+      {
+        type: "p",
+        text: "Modele “sen bir koçsun” dersen sana koçluk yapmaya çalışır, tavsiye yazar. “Çalışma kitabı tasarımcısısın” dersen kutu ve soru üretir. Rolü çıktının biçimine göre seç, konusuna göre değil.",
+      },
+      {
+        type: "h3",
+        text: "2. “Baskıya hazır” ve “doldurulabilir”",
+      },
+      {
+        type: "p",
+        text: "Bu iki kelime olmadan model ekranda okunacak bir metin yazıyor: paragraflar dolu, boşluk yok. Kâğıda çıkarınca üzerine yazacak yer bulamıyorsun.",
+      },
+      {
+        type: "h3",
+        text: "3. Örnek yasağı",
+      },
+      {
+        type: "p",
+        text: "Promptun en çok işe yarayan satırı bu. Yapay zekâ yardımcı olmayı sever, her sorunun altına örnek cevap koyar. Yasaklamazsan katılımcı düşünmek yerine örneği kopyalar ve kitapçık amacını kaybeder.",
+      },
+      {
+        type: "h3",
+        text: "4. İpucu daraltıcı olsun",
+      },
+      {
+        type: "p",
+        text: "“Ne yazayım?” sorusunun cevabını vermek yerine “şunu yazma” demek, katılımcıyı kendi cevabına itiyor. Bu satır olmadan ipuçları da birer örneğe dönüşüyor.",
+      },
+      {
+        type: "h3",
+        text: "5. Kapanış mekanizması",
+      },
+      {
+        type: "p",
+        text: "İnsanların yarıda bıraktığı yer hep aynı: sonuç genel gelince aracı suçlayıp kapatıyorlar. Son kutu bu anı yakalayıp eksik bırakılan kutuya geri gönderiyor. Kitapçığı tamamlatan şey bu.",
+      },
+      {
+        type: "h3",
+        text: "6. Önce yapı, sonra dosya",
+      },
+      {
+        type: "p",
+        text: "Son satır modeli iki adıma bölüyor. Doğrudan dosya isteseydin, beğenmediğinde her şeyi baştan ürettirmen gerekirdi. Önce iskeleti görüp düzeltmek çok daha hızlı.",
+      },
+      {
+        type: "h2",
+        text: "Önce dosya oluşturmayı açman gerekiyor",
+      },
+      {
+        type: "p",
+        text: "Claude varsayılan olarak dosya üretmiyor. Bir kerelik şu ayarı açman lazım:",
+      },
+      {
+        type: "list",
+        items: [
+          "İsmine tıkla, Ayarlar'a gir.",
+          "Yetenekler (Capabilities) sekmesini bul.",
+          "Aşağı in, “Kod çalıştırma ve dosya oluşturma” anahtarını aç. Anahtar maviye döndüğünde hazırsın.",
+          "Yeni bir sohbet penceresi aç ve promptu yapıştır.",
+          "Dosya hazır olunca indir ya da Drive'a kaydet.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Dağıtabilmen için bir adım daha",
+      },
+      {
+        type: "p",
+        text: "Dosyayı Drive'a kaydettiysen varsayılan erişim “kısıtlanmış” olur, yani senden başka kimse açamaz. Drive'da dosyayı aç, Dosya menüsünden Paylaş'a gir, erişimi “bağlantıya sahip olan herkes” yap ve bağlantıyı kopyala. Artık öğrencine verebileceğin, atölyende dağıtabileceğin, e-posta listene koyabileceğin bir linkin var.",
+      },
+      {
+        type: "h2",
+        text: "Bölüm 2'de ne var?",
+      },
+      {
+        type: "p",
+        text: "Bu dosyayı her isteyene tek tek göndermek bir süre sonra iş oluyor. Bölüm 2'de gönderiye yorum yazana dosyayı otomatik göndermeyi kuracağız.",
+      },
+      {
+        type: "p",
+        text: "Bu kitapçığı kendi işin için üretirsen bana da göster, nasıl çıktığını merak ediyorum. Atölye veren bir arkadaşın varsa ona da gönder.",
+      },
+    ],
+    instagramUrl: "",
+  },
 ];
 
 export function getCategory(slug: string): Category | undefined {
